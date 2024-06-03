@@ -23,16 +23,17 @@
 
 
 <p align="center">
-    <a href="https://ab-elements.vercel.app" target="_blank"><b>Checkout abElements &rarr;</b></a>
+    <a href="https://ab-elements.vercel.app/docs/animations" target="_blank"><b>Checkout abElements &rarr;</b></a>
 </p>
 
 
-# `ab-nextjs-components`
+# `ab-nextjs-animations`
 
 > IMPORTANT: This is a work in progress and subject to major changes until version 1.0.
 
 
-🚀 This is a lightweight collection of server & client React components created by [Abraham Ukachi](https://github.com/abraham-ukachi), and optimized for [Next.js](https://nextjs.org/docs) applications 😎.
+🚀 This is a lightweight collection of React animations created by [Abraham Ukachi](https://github.com/abraham-ukachi), and optimized for [Next.js](https://nextjs.org/docs) applications 😎. 
+
 
 
 ## Getting Started
@@ -42,53 +43,62 @@
 #### npm
 
 ```bash
-npm i ab-nextjs-components
+npm i ab-nextjs-animations
 ```
 
 #### pnpm
 
 ```bash
-pnpm install ab-nextjs-components
+pnpm install ab-nextjs-animations
 ```
 
 ---
 
-### Types
 
-All the types are located in the `types` folder. A specific type like *`AbButtonProps`* can be imported directly:
+## Tailwind Animations
 
-```ts
-import type { AbButtonProps } from 'ab-nextjs-components';
-```
-
-
-
-## Client Components
-
-A list of all the **client components** and their current status:
+A list of all the supported **tailwind animations** and their current status:
 
 | No. | Name | File | Status |
 |:----|:-----|:-----|:-------|
-| 1 | *`AbLogo`* | **ab-logo/index.tsx** | Pending |
-| 2 | *`AbIcon`* | **ab-icon/index.tsx** | Pending |
-| 3 | *`AbButton`* | **ab-button/index.tsx** | Pending |
-| 4 | *`AbInput`* | **ab-input/index.tsx** | Pending |
+| 1 | *`PopIn`* | **pop-in.ts** | Pending |
+| 2 | *`FadeIn`* | **fade-in.ts** | Pending |
+| 3 | *`FadeOut`* | **fade-out.ts** | Pending |
+| 4 | *`SlideFromDown`* | **slide-from-down.ts** | Pending |
+| 5 | *`SlideFromUp`* | **slide-from-up.ts** | Pending |
+| 6 | *`SlideLeft`* | **slide-left.ts** | Pending |
+| 7 | *`SlideFromLeft`* | **slide-from-left.ts** | Pending |
+| 8 | *`SlideRight`* | **slide-right.ts** | Pending |
+| 9 | *`SlideFromRight`* | **slide-from-right.ts** | Pending |
+| 10 | *`SlideDown`* | **slide-down.ts** | Pending |
+| 11 | *`SlideUp`* | **slide-up.ts** | Pending |
+| 12 | *`Loop`* | **loop.ts** | Pending |
 
-> NOTE: 
+> NOTE:
 
 
 
-## Server Components
+## CSS Animations
 
-A list of all the **server components** and their current status:
+A list of all the supported **css animations** and their current status:
 
 | No. | Name | File | Status |
 |:----|:-----|:-----|:-------|
-| 1 | *`AbLogo`* | **server/ab-logo/index.tsx** | Pending |
-| 2 | *`AbIcon`* | **server/ab-icon/index.tsx** | Pending |
-| 3 | *`AbButton`* | **server/ab-button/index.tsx** | Pending |
+| 1 | *`PopIn`* | **css/pop-in-animation.css** | Pending |
+| 2 | *`FadeIn`* | **css/fade-in-animation.css** | Pending |
+| 3 | *`FadeOut`* | **css/fade-out-animation.css** | Pending |
+| 4 | *`SlideFromDown`* | **css/slide-from-down-animation.css** | Pending |
+| 5 | *`SlideFromUp`* | **css/slide-from-up-animation.css** | Pending |
+| 6 | *`SlideLeft`* | **css/slide-left-animation.css** | Pending |
+| 7 | *`SlideFromLeft`* | **css/slide-from-left-animation.css** | Pending |
+| 8 | *`SlideRight`* | **css/slide-right-animation.css** | Pending |
+| 9 | *`SlideFromRight`* | **css/slide-from-right-animation.css** | Pending |
+| 10 | *`SlideDown`* | **css/slide-down-animation.css** | Pending |
+| 11 | *`SlideUp`* | **css/slide-up-animation.css** | Pending |
+| 12 | *`Loop`* | **css/loop-animation.css** | Pending |
 
 > NOTE: 
+
 
 
 
@@ -96,14 +106,18 @@ A list of all the **server components** and their current status:
 
 To learn more about **`abElements`**, take a look at the following resources:
 
-- [abElements Documentation](https://ab-elements.vercel.app/docs) - learn about abElements features and API.
+- [abElements Documentation](https://ab-elements.vercel.app/docs) - learn about `abElements` features and API.
+- [abElements Animations](https://ab-elements.vercel.app/docs/animations) - learn about **animations** in `abElements`.
+- [abElements Core](https://ab-elements.vercel.app/docs/animations) - learn about **core** in `abElements`.
+- [abElements Theme](https://ab-elements.vercel.app/docs/theme) - learn about **theme** in `abElements`.
+- [abElements Icons](https://ab-elements.vercel.app/docs/icons) - learn about **icons** in `abElements`.
 
 You can check out [the abElements GitHub repository](https://github.com/abraham-ukachi/ab-elements-app) for more details.
 
 
 ## License
 
-This **`ab-nextjs-components`** project is [MIT Licensed](./LICENSE) ;)
+This **`ab-nextjs-animations`** project is [MIT Licensed](./LICENSE) ;)
 
 
 

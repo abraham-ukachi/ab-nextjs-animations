@@ -1,19 +1,19 @@
 {
-  "name": "ab-nextjs-components",
-  "version": "0.1.2",
-  "description": "🚀 A lightweight collection of server & client React components created by Abraham Ukachi, and optimized for Next.js applications 😎.",
-  "main": "index.js",
+  "name": "ab-nextjs-animations",
+  "version": "0.1.0",
+  "description": "🚀 A lightweight collection of React animations created by Abraham Ukachi, and optimized for Next.js applications 😎.",
+  "main": "index.ts",
   "types": "types/index.d.ts",
 
-  "homepage": "https://github.com/abraham-ukachi/ab-nextjs-components#readme",
+  "homepage": "https://github.com/abraham-ukachi/ab-nextjs-animations#readme",
 
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abraham-ukachi/ab-nextjs-components.git"
+    "url": "git+https://github.com/abraham-ukachi/ab-nextjs-animations.git"
   },
 
   "bugs": {
-    "url": "https://github.com/abraham-ukachi/ab-nextjs-components/issues"
+    "url": "https://github.com/abraham-ukachi/ab-nextjs-animations/issues"
   },
 
   "scripts": {
@@ -23,12 +23,10 @@
   "keywords": [
     "react",
     "nextjs",
-    "server",
-    "client",
-    "components",
+    "animations",
     "abraham",
     "ukachi",
-    "ab-nextjs-components"
+    "ab-nextjs-animations"
   ],
 
   "author": {

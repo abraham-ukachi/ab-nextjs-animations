@@ -32,7 +32,7 @@
 > IMPORTANT: This is a work in progress and subject to major changes until version 1.0.
 
 
-🚀 This is a lightweight collection of React animations created by [Abraham Ukachi](https://github.com/abraham-ukachi), and optimized for [Next.js](https://nextjs.org/docs) applications 😎. 
+💫 This is a lightweight collection of React animations created by [Abraham Ukachi](https://github.com/abraham-ukachi), and optimized for [Next.js](https://nextjs.org/docs) applications 😎. 
 
 
 
@@ -112,6 +112,7 @@ To learn more about **`abElements`**, take a look at the following resources:
 - [abElements Theme](https://ab-elements.vercel.app/docs/theme) - learn about **theme** in `abElements`.
 - [abElements Icons](https://ab-elements.vercel.app/docs/icons) - learn about **icons** in `abElements`.
 - [abElements Components](https://ab-elements.vercel.app/docs/components) - learn about **components** in `abElements`. 
+- [abElements Fonts](https://ab-elements.vercel.app/docs/fonts) - learn about **fonts** in `abElements`. 
 
 You can check out [the abElements GitHub repository](https://github.com/abraham-ukachi/ab-elements-app) for more details.
 

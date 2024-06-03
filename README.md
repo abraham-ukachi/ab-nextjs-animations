@@ -111,6 +111,7 @@ To learn more about **`abElements`**, take a look at the following resources:
 - [abElements Core](https://ab-elements.vercel.app/docs/animations) - learn about **core** in `abElements`.
 - [abElements Theme](https://ab-elements.vercel.app/docs/theme) - learn about **theme** in `abElements`.
 - [abElements Icons](https://ab-elements.vercel.app/docs/icons) - learn about **icons** in `abElements`.
+- [abElements Components](https://ab-elements.vercel.app/docs/components) - learn about **components** in `abElements`. 
 
 You can check out [the abElements GitHub repository](https://github.com/abraham-ukachi/ab-elements-app) for more details.
 

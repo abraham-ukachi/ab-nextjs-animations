@@ -13,8 +13,7 @@
     "url": "https://github.com/abraham-ukachi/ab-nextjs-animations/issues"
   },
   "scripts": {
-    "lint": "eslint . --ext .ts,.tsx --fix",
-    "deploy": "git push --follow-tags origin main && pnpm publish"
+    "lint": "eslint . --ext .ts,.tsx --fix"
   },
 
   "keywords": [

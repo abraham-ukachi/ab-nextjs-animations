@@ -61,18 +61,18 @@ A list of all the supported **tailwind animations** and their current status:
 
 | No. | Name | File | Status |
 |:----|:-----|:-----|:-------|
-| 1 | *`PopIn`* | **pop-in.ts** | Pending |
-| 2 | *`FadeIn`* | **fade-in.ts** | Pending |
-| 3 | *`FadeOut`* | **fade-out.ts** | Pending |
-| 4 | *`SlideFromDown`* | **slide-from-down.ts** | Pending |
-| 5 | *`SlideFromUp`* | **slide-from-up.ts** | Pending |
-| 6 | *`SlideLeft`* | **slide-left.ts** | Pending |
-| 7 | *`SlideFromLeft`* | **slide-from-left.ts** | Pending |
-| 8 | *`SlideRight`* | **slide-right.ts** | Pending |
-| 9 | *`SlideFromRight`* | **slide-from-right.ts** | Pending |
-| 10 | *`SlideDown`* | **slide-down.ts** | Pending |
-| 11 | *`SlideUp`* | **slide-up.ts** | Pending |
-| 12 | *`Loop`* | **loop.ts** | Pending |
+| 1 | *`PopIn`* | **pop-in/index.ts** | Pending |
+| 2 | *`FadeIn`* | **fade-in/index.ts** | Pending |
+| 3 | *`FadeOut`* | **fade-out/index.ts** | Pending |
+| 4 | *`SlideFromDown`* | **slide-from-down/index.ts** | Pending |
+| 5 | *`SlideFromUp`* | **slide-from-up/index.ts** | Pending |
+| 6 | *`SlideLeft`* | **slide-left/index.ts** | Pending |
+| 7 | *`SlideFromLeft`* | **slide-from-left/index.ts** | Pending |
+| 8 | *`SlideRight`* | **slide-right/index.ts** | Pending |
+| 9 | *`SlideFromRight`* | **slide-from-right/index.ts** | Pending |
+| 10 | *`SlideDown`* | **slide-down/index.ts** | Pending |
+| 11 | *`SlideUp`* | **slide-up/index.ts** | Pending |
+| 12 | *`Loop`* | **loop/index.ts** | Pending |
 
 > NOTE:
 
@@ -84,22 +84,26 @@ A list of all the supported **css animations** and their current status:
 
 | No. | Name | File | Status |
 |:----|:-----|:-----|:-------|
-| 1 | *`PopIn`* | **css/pop-in-animation.css** | Pending |
-| 2 | *`FadeIn`* | **css/fade-in-animation.css** | Pending |
-| 3 | *`FadeOut`* | **css/fade-out-animation.css** | Pending |
-| 4 | *`SlideFromDown`* | **css/slide-from-down-animation.css** | Pending |
-| 5 | *`SlideFromUp`* | **css/slide-from-up-animation.css** | Pending |
-| 6 | *`SlideLeft`* | **css/slide-left-animation.css** | Pending |
-| 7 | *`SlideFromLeft`* | **css/slide-from-left-animation.css** | Pending |
-| 8 | *`SlideRight`* | **css/slide-right-animation.css** | Pending |
-| 9 | *`SlideFromRight`* | **css/slide-from-right-animation.css** | Pending |
-| 10 | *`SlideDown`* | **css/slide-down-animation.css** | Pending |
-| 11 | *`SlideUp`* | **css/slide-up-animation.css** | Pending |
-| 12 | *`Loop`* | **css/loop-animation.css** | Pending |
+| 1 | *`PopIn`* | **pop-in/styles.css** | Pending |
+| 2 | *`FadeIn`* | **fade-in/styles.css** | Pending |
+| 3 | *`FadeOut`* | **fade-out/styles.css** | Pending |
+| 4 | *`SlideFromDown`* | **slide-from-down/styles.css** | Pending |
+| 5 | *`SlideFromUp`* | **slide-from-up/styles.css** | Pending |
+| 6 | *`SlideLeft`* | **slide-left/styles.css** | Pending |
+| 7 | *`SlideFromLeft`* | **slide-from-left/styles.css** | Pending |
+| 8 | *`SlideRight`* | **slide-right/styles.css** | Pending |
+| 9 | *`SlideFromRight`* | **slide-from-right/styles.css** | Pending |
+| 10 | *`SlideDown`* | **slide-down/styles.css** | Pending |
+| 11 | *`SlideUp`* | **slide-up/styles.css** | Pending |
+| 12 | *`Loop`* | **loop/styles.css** | Pending |
 
 > NOTE: 
 
 
+## TODOs
+
+- [ ] Optimize all **`.ts`** animation files
+- [ ] Optimize all **`.css`** animation files
 
 
 ## Learn More abElements
@@ -113,6 +117,7 @@ To learn more about **`abElements`**, take a look at the following resources:
 - [abElements Icons](https://ab-elements.vercel.app/docs/icons) - learn about **icons** in `abElements`.
 - [abElements Components](https://ab-elements.vercel.app/docs/components) - learn about **components** in `abElements`. 
 - [abElements Fonts](https://ab-elements.vercel.app/docs/fonts) - learn about **fonts** in `abElements`. 
+- [abElements Hooks](https://ab-elements.vercel.app/docs/hooks) - learn about **hooks** in `abElements`. 
 
 You can check out [the abElements GitHub repository](https://github.com/abraham-ukachi/ab-elements-app) for more details.
 

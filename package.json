@@ -1,7 +1,7 @@
 {
   "name": "ab-nextjs-animations",
-  "version": "0.1.1",
-  "description": "🚀 A lightweight collection of React animations created by Abraham Ukachi, and optimized for Next.js applications 😎.",
+  "version": "0.1.2",
+  "description": "💫 A lightweight collection of React animations created by Abraham Ukachi, and optimized for Next.js applications 😎.",
   "main": "index.ts",
   "types": "types/index.d.ts",
   "homepage": "https://github.com/abraham-ukachi/ab-nextjs-animations#readme",
@@ -21,7 +21,8 @@
     "animations",
     "abraham",
     "ukachi",
-    "ab-nextjs-animations"
+    "ab-nextjs-animations",
+    "ab-elements"
   ],
   "author": {
     "name": "Abraham Ukachi",

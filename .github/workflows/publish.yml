@@ -27,14 +27,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Bump version and push tag
-        run: |
-          pnpm install -g standard-version
-          standard-version
-          git push --follow-tags
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: Lint typescript
+        run: pnpm lint
+      
       - name: Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

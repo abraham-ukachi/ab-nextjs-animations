@@ -29,12 +29,9 @@ jobs:
 
       - name: Lint typescript
         run: pnpm lint
-      
-      - name: Checkout to main
-        run: git checkout main
 
       - name: Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm publish --access public
+        run: pnpm publish --access public --no-git-checks
 

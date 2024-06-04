@@ -1,6 +1,6 @@
 {
   "name": "ab-nextjs-animations",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "💫 A lightweight collection of React animations created by Abraham Ukachi, and optimized for Next.js applications 😎.",
   "main": "index.ts",
   "types": "types/index.d.ts",

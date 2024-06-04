@@ -61,18 +61,18 @@ A list of all the supported **tailwind animations** and their current status:
 
 | No. | Name | File | Status |
 |:----|:-----|:-----|:-------|
-| 1 | *`PopIn`* | **pop-in/index.ts** | Pending |
-| 2 | *`FadeIn`* | **fade-in/index.ts** | Pending |
-| 3 | *`FadeOut`* | **fade-out/index.ts** | Pending |
-| 4 | *`SlideFromDown`* | **slide-from-down/index.ts** | Pending |
-| 5 | *`SlideFromUp`* | **slide-from-up/index.ts** | Pending |
-| 6 | *`SlideLeft`* | **slide-left/index.ts** | Pending |
-| 7 | *`SlideFromLeft`* | **slide-from-left/index.ts** | Pending |
-| 8 | *`SlideRight`* | **slide-right/index.ts** | Pending |
-| 9 | *`SlideFromRight`* | **slide-from-right/index.ts** | Pending |
-| 10 | *`SlideDown`* | **slide-down/index.ts** | Pending |
-| 11 | *`SlideUp`* | **slide-up/index.ts** | Pending |
-| 12 | *`Loop`* | **loop/index.ts** | Pending |
+| 1 | *`popIn`* | **pop-in/index.ts** | *In progress* |
+| 2 | *`fadeIn`* | **fade-in/index.ts** | Pending |
+| 3 | *`fadeOut`* | **fade-out/index.ts** | Pending |
+| 4 | *`slideFromDown`* | **slide-from-down/index.ts** | Pending |
+| 5 | *`slideFromUp`* | **slide-from-up/index.ts** | Pending |
+| 6 | *`slideLeft`* | **slide-left/index.ts** | Pending |
+| 7 | *`slideFromLeft`* | **slide-from-left/index.ts** | Pending |
+| 8 | *`slideRight`* | **slide-right/index.ts** | Pending |
+| 9 | *`slideFromRight`* | **slide-from-right/index.ts** | Pending |
+| 10 | *`slideDown`* | **slide-down/index.ts** | Pending |
+| 11 | *`slideUp`* | **slide-up/index.ts** | Pending |
+| 12 | *`loop`* | **loop/index.ts** | Pending |
 
 > NOTE:
 
@@ -84,18 +84,18 @@ A list of all the supported **css animations** and their current status:
 
 | No. | Name | File | Status |
 |:----|:-----|:-----|:-------|
-| 1 | *`PopIn`* | **pop-in/styles.css** | Pending |
-| 2 | *`FadeIn`* | **fade-in/styles.css** | Pending |
-| 3 | *`FadeOut`* | **fade-out/styles.css** | Pending |
-| 4 | *`SlideFromDown`* | **slide-from-down/styles.css** | Pending |
-| 5 | *`SlideFromUp`* | **slide-from-up/styles.css** | Pending |
-| 6 | *`SlideLeft`* | **slide-left/styles.css** | Pending |
-| 7 | *`SlideFromLeft`* | **slide-from-left/styles.css** | Pending |
-| 8 | *`SlideRight`* | **slide-right/styles.css** | Pending |
-| 9 | *`SlideFromRight`* | **slide-from-right/styles.css** | Pending |
-| 10 | *`SlideDown`* | **slide-down/styles.css** | Pending |
-| 11 | *`SlideUp`* | **slide-up/styles.css** | Pending |
-| 12 | *`Loop`* | **loop/styles.css** | Pending |
+| 1 | *`popIn`* | **pop-in/styles.css** | *In progress* |
+| 2 | *`fadeIn`* | **fade-in/styles.css** | Pending |
+| 3 | *`fadeOut`* | **fade-out/styles.css** | Pending |
+| 4 | *`slideFromDown`* | **slide-from-down/styles.css** | Pending |
+| 5 | *`slideFromUp`* | **slide-from-up/styles.css** | Pending |
+| 6 | *`slideLeft`* | **slide-left/styles.css** | Pending |
+| 7 | *`slideFromLeft`* | **slide-from-left/styles.css** | Pending |
+| 8 | *`slideRight`* | **slide-right/styles.css** | Pending |
+| 9 | *`slideFromRight`* | **slide-from-right/styles.css** | Pending |
+| 10 | *`slideDown`* | **slide-down/styles.css** | Pending |
+| 11 | *`slideUp`* | **slide-up/styles.css** | Pending |
+| 12 | *`loop`* | **loop/styles.css** | Pending |
 
 > NOTE: 
 

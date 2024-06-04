@@ -61,7 +61,7 @@ A list of all the supported **tailwind animations** and their current status:
 
 | No. | Name | File | Status |
 |:----|:-----|:-----|:-------|
-| 1 | *`popIn`* | **pop-in/index.ts** | *In progress* |
+| 1 | *`popIn`* | **pop-in/index.ts** | [Done](./pop-in/index.ts) |
 | 2 | *`fadeIn`* | **fade-in/index.ts** | Pending |
 | 3 | *`fadeOut`* | **fade-out/index.ts** | Pending |
 | 4 | *`slideFromDown`* | **slide-from-down/index.ts** | Pending |
@@ -84,7 +84,7 @@ A list of all the supported **css animations** and their current status:
 
 | No. | Name | File | Status |
 |:----|:-----|:-----|:-------|
-| 1 | *`popIn`* | **pop-in/styles.css** | *In progress* |
+| 1 | *`popIn`* | **pop-in/styles.css** | [Done](./pop-in/styles.css) |
 | 2 | *`fadeIn`* | **fade-in/styles.css** | Pending |
 | 3 | *`fadeOut`* | **fade-out/styles.css** | Pending |
 | 4 | *`slideFromDown`* | **slide-from-down/styles.css** | Pending |

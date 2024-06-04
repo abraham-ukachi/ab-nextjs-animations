@@ -59,7 +59,7 @@ export interface Keyframe {
   composite?: CompositeOperation | null;
   easing?: string;
   offset?: number | null;
-};
+}
 
 
 
@@ -69,7 +69,7 @@ export interface Keyframe {
 
 export interface Keyframes {
   [offset: string]: Keyframe;
-};
+}
 
 
 

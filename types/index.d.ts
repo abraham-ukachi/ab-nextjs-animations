@@ -85,3 +85,17 @@ export interface Animation {
 
 
 
+//////////////////////////////
+/// ANIMATIONS - interface ///
+//////////////////////////////
+
+
+export interface Animations {
+  keyframes: Record<string, Keyframes>;
+  refs: Record<string, string>;
+}
+
+
+
+
+

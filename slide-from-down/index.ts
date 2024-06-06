@@ -85,8 +85,8 @@ import type { Animation } from '../types/index.d';
 const SlideFromDownAnimation: Animation = { 
 
   keyframes: {
-    from: { opacity: 0 },
-    to: { opacity: 1 },
+    from: { transform: 'translateY(100%)' },
+    to: { transform: 'translateY(0%)' },
   },
 
   ref: 'slideFromDown 1s ease forwards',

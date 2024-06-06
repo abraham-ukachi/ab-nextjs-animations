@@ -79,7 +79,7 @@ import FadeOutAnimation from './fade-out';
 import SlideFromDownAnimation from './slide-from-down';
 import SlideFromUpAnimation from './slide-from-up';
 import SlideLeftAnimation from './slide-left';
-// TODO: import SlideFromLeftAnimation from './slide-from-left';
+import SlideFromLeftAnimation from './slide-from-left';
 // TODO: import SlideRightAnimation from './slide-right';
 // TODO: import SlideFromRightAnimation from './slide-from-right';
 // TODO: import SlideDownAnimation from './slide-down';
@@ -97,7 +97,7 @@ export const supportedAnimations: Array<{ name: string, animation: Animation }> 
   { name: 'slide-from-down', animation: SlideFromDownAnimation },
   { name: 'slide-from-up', animation: SlideFromUpAnimation },
   { name: 'slide-left', animation: SlideLeftAnimation },
-  // TODO: { name: 'slide-from-left', animation: SlideFromLeftAnimation },
+  { name: 'slide-from-left', animation: SlideFromLeftAnimation },
   // TODO: { name: 'slide-right', animation: SlideRightAnimation },
   // TODO: { name: 'slide-from-right', animation: SlideFromRightAnimation },
   // TODO: { name: 'slide-down', animation: SlideDownAnimation },

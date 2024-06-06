@@ -64,8 +64,8 @@ A list of all the supported **tailwind animations** and their current status:
 | 1 | *`popIn`* | **pop-in/index.ts** | [Done](./pop-in/index.ts) |
 | 2 | *`fadeIn`* | **fade-in/index.ts** | [Done](./fade-in/index.ts) |
 | 3 | *`fadeOut`* | **fade-out/index.ts** | [Done](./fade-out/index.ts) |
-| 4 | *`slideFromDown`* | **slide-from-down/index.ts** | *In progress* |
-| 5 | *`slideFromUp`* | **slide-from-up/index.ts** | Pending |
+| 4 | *`slideFromDown`* | **slide-from-down/index.ts** | [Done](./slide-from-down/index.ts) |
+| 5 | *`slideFromUp`* | **slide-from-up/index.ts** | *In progress* |
 | 6 | *`slideLeft`* | **slide-left/index.ts** | Pending |
 | 7 | *`slideFromLeft`* | **slide-from-left/index.ts** | Pending |
 | 8 | *`slideRight`* | **slide-right/index.ts** | Pending |
@@ -87,8 +87,8 @@ A list of all the supported **css animations** and their current status:
 | 1 | *`popIn`* | **pop-in/styles.css** | [Done](./pop-in/styles.css) |
 | 2 | *`fadeIn`* | **fade-in/styles.css** | [Done](./fade-in/styles.css) |
 | 3 | *`fadeOut`* | **fade-out/styles.css** | [Done](./fade-out/styles.css) |
-| 4 | *`slideFromDown`* | **slide-from-down/styles.css** | *In progress* |
-| 5 | *`slideFromUp`* | **slide-from-up/styles.css** | Pending |
+| 4 | *`slideFromDown`* | **slide-from-down/styles.css** | [Done](./slide-from-down/styles.css) |
+| 5 | *`slideFromUp`* | **slide-from-up/styles.css** | *In progress* |
 | 6 | *`slideLeft`* | **slide-left/styles.css** | Pending |
 | 7 | *`slideFromLeft`* | **slide-from-left/styles.css** | Pending |
 | 8 | *`slideRight`* | **slide-right/styles.css** | Pending |

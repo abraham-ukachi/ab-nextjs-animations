@@ -76,7 +76,7 @@ import type { Animations, Animation, Keyframes } from './types';
 import PopInAnimation from './pop-in';
 import FadeInAnimation from './fade-in';
 import FadeOutAnimation from './fade-out';
-// TODO: import SlideFromDownAnimation from './slide-from-down';
+import SlideFromDownAnimation from './slide-from-down';
 // TODO: import SlideFromUpAnimation from './slide-from-up';
 // TODO: import SlideLeftAnimation from './slide-left';
 // TODO: import SlideFromLeftAnimation from './slide-from-left';
@@ -94,7 +94,7 @@ export const supportedAnimations: Array<{ name: string, animation: Animation }> 
   { name: 'pop-in', animation: PopInAnimation },
   { name: 'fade-in', animation: FadeInAnimation },
   { name: 'fade-out', animation: FadeOutAnimation },
-  // TODO: { name: 'slide-from-down', animation: SlideFromDownAnimation },
+  { name: 'slide-from-down', animation: SlideFromDownAnimation },
   // TODO: { name: 'slide-from-up', animation: SlideFromUpAnimation },
   // TODO: { name: 'slide-left', animation: SlideLeftAnimation },
   // TODO: { name: 'slide-from-left', animation: SlideFromLeftAnimation },

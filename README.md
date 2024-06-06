@@ -104,6 +104,7 @@ A list of all the supported **css animations** and their current status:
 
 - [ ] Optimize all **`.ts`** animation files
 - [ ] Optimize all **`.css`** animation files
+- [ ] Update **`README.md`** of all animations
 
 
 ## Learn More abElements

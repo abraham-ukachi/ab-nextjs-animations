@@ -70,7 +70,7 @@
 
 
 // Importing the `Animations` type
-import type { Animations } from './types';
+import type { Animations, Animation, Keyframes } from './types';
 
 // get all animations
 import PopInAnimation from './pop-in';
@@ -89,46 +89,79 @@ import PopInAnimation from './pop-in';
 
 
 
+// Create a list of all supported animations
+export const supportedAnimations: Array<{ name: string, animation: Animation }> = [
+  { name: 'pop-in', animation: PopInAnimation },
+  // TODO: { name: 'fade-in', animation: FadeInAnimation },
+  // TODO: { name: 'fade-out', animation: FadeOutAnimation },
+  // TODO: { name: 'slide-from-down', animation: SlideFromDownAnimation },
+  // TODO: { name: 'slide-from-up', animation: SlideFromUpAnimation },
+  // TODO: { name: 'slide-left', animation: SlideLeftAnimation },
+  // TODO: { name: 'slide-from-left', animation: SlideFromLeftAnimation },
+  // TODO: { name: 'slide-right', animation: SlideRightAnimation },
+  // TODO: { name: 'slide-from-right', animation: SlideFromRightAnimation },
+  // TODO: { name: 'slide-down', animation: SlideDownAnimation },
+  // TODO: { name: 'slide-up', animation: SlideUpAnimation },
+  // TODO: { name: 'loop', animation: LoopAnimation },
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Returns all the keyframes of currently supported animations
+ *
+ * @return { Keyframes }
+ */
+const getAllKeyframes = () => supportedAnimations.reduce((obj, 
+  { name, animation }: { name: string, animation: Animation }): Keyframes => {
+
+  return {
+    ...obj,
+    [name]: animation.keyframes,
+  };
+
+}, {});
+
+/**
+ * Returns all the refs of currently supported animations
+ *
+ * @return { Record<string, string> }
+ */
+const getAllRefs = () => supportedAnimations.reduce((obj, 
+  { name, animation }: { name: string, animation: Animation }): Record<string, string> => {
+
+  return {
+    ...obj,
+    [name]: animation.ref,
+  };
+
+}, {});
+
+
+
+// get all keyframes & refs
+const keyframes: Keyframes = getAllKeyframes();
+const refs: Record<string, string> = getAllRefs(); 
+
 
 /*
  * `ab-animations`
  *  
  * @type { Animations } - abAnimations
  */
-const abAnimations: Animations = {
-
-  keyframes: {
-    'pop-in': PopInAnimation.keyframes,
-    // TODO: 'fade-in': FadeInAnimation.keyframes,
-    // TODO: 'fade-out': FadeOutAnimation.keyframes,
-    // TODO: 'slide-from-down': SlideFromDownAnimation.keyframes,
-    // TODO: 'slide-from-up': SlideFromUpAnimation.keyframes,
-    // TODO: 'slide-left': SlideLeftAnimation.keyframes,
-    // TODO: 'slide-from-left': SlideFromLeftAnimation.keyframes,
-    // TODO: 'slide-right': SlideRightAnimation.keyframes,
-    // TODO: 'slide-from-right': SlideFromRightAnimation.keyframes,
-    // TODO: 'slide-down': SlideDownAnimation.keyframes,
-    // TODO: 'slide-up': SlideUpAnimation.keyframes,
-    // TODO: 'loop': LoopAnimation.keyframes,
-  },
-
-
-  refs: {
-    'pop-in': PopInAnimation.ref,
-    // TODO: 'fade-in': FadeInAnimation.ref,
-    // TODO: 'fade-out': FadeOutAnimation.ref,
-    // TODO: 'slide-from-down': SlideFromDownAnimation.ref,
-    // TODO: 'slide-from-up': SlideFromUpAnimation.ref,
-    // TODO: 'slide-left': SlideLeftAnimation.ref,
-    // TODO: 'slide-from-left': SlideFromLeftAnimation.ref,
-    // TODO: 'slide-right': SlideRightAnimation.ref,
-    // TODO: 'slide-from-right': SlideFromRightAnimation.ref,
-    // TODO: 'slide-down': SlideDownAnimation.ref,
-    // TODO: 'slide-up': SlideUpAnimation.ref,
-    // TODO: 'loop': LoopAnimation.ref,
-  },
-};
-
+const abAnimations: Animations = { keyframes, refs };
 
 
 export default abAnimations;

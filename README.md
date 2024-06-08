@@ -70,8 +70,8 @@ A list of all the supported **tailwind animations** and their current status:
 | 7 | *`slideFromLeft`* | **slide-from-left/index.ts** | [Done](./slide-from-left/index.ts) |
 | 8 | *`slideRight`* | **slide-right/index.ts** | [Done](./slide-right/index.ts) |
 | 9 | *`slideFromRight`* | **slide-from-right/index.ts** | [Done](./slide-from-right/index.ts) |
-| 10 | *`slideDown`* | **slide-down/index.ts** | *In progress* |
-| 11 | *`slideUp`* | **slide-up/index.ts** | Pending |
+| 10 | *`slideDown`* | **slide-down/index.ts** | [Done](./slide-down/index.ts) |
+| 11 | *`slideUp`* | **slide-up/index.ts** | *In progress* |
 | 12 | *`loop`* | **loop/index.ts** | Pending |
 
 > NOTE:
@@ -93,8 +93,8 @@ A list of all the supported **css animations** and their current status:
 | 7 | *`slideFromLeft`* | **slide-from-left/styles.css** | [Done](./slide-from-left/styles.css) |
 | 8 | *`slideRight`* | **slide-right/styles.css** | [Done](./slide-right/styles.css) |
 | 9 | *`slideFromRight`* | **slide-from-right/styles.css** | [Done](./slide-from-right/styles.css) |
-| 10 | *`slideDown`* | **slide-down/styles.css** | *In progress* |
-| 11 | *`slideUp`* | **slide-up/styles.css** | Pending |
+| 10 | *`slideDown`* | **slide-down/styles.css** | [Done](./slide-down/styles.css) |
+| 11 | *`slideUp`* | **slide-up/styles.css** | *In progress* |
 | 12 | *`loop`* | **loop/styles.css** | Pending |
 
 > NOTE: 

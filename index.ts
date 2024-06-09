@@ -84,7 +84,7 @@ import SlideRightAnimation from './slide-right';
 import SlideFromRightAnimation from './slide-from-right';
 import SlideDownAnimation from './slide-down';
 import SlideUpAnimation from './slide-up';
-// TODO: import LoopAnimation from './loop';
+import LoopAnimation from './loop';
 
 
 
@@ -102,7 +102,7 @@ export const supportedAnimations: Array<{ name: string, animation: Animation }> 
   { name: 'slide-from-right', animation: SlideFromRightAnimation },
   { name: 'slide-down', animation: SlideDownAnimation },
   { name: 'slide-up', animation: SlideUpAnimation },
-  // TODO: { name: 'loop', animation: LoopAnimation },
+  { name: 'loop', animation: LoopAnimation },
 ];
 
 

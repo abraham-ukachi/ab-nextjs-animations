@@ -39,59 +39,20 @@
 *
 */
 
-
 /*
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * MOTTO: I'll always do more 😜!!!
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-
-
 /* Slide From Down Animation */
 
-/* WEBKIT: Chrome */
-@-webkit-keyframes slideFromDown {
-  from { -webkit-transform: translateY(100%); }
-  to { -webkit-transform: translateY(0%); }
-}
-
-/* MOZ: Firefox */
-@-moz-keyframes slideFromDown {
-  from { -moz-transform: translateY(100%); }
-  to { -moz-transform: translateY(0%); } 
-}
-
-/* MS: Edge & Internet Explorer */
-@-ms-keyframes slideFromDown {
-  from { -ms-transform: translateY(100%); }
-  to { -ms-transform: translateY(0%); }
-}
-
-/* O: Opera */
-@-o-keyframes slideFromDown {
-  from { -o-transform: translateY(100%); }
-  to { -o-transform: translateY(0%); }
-}
-
-/* KHTML: Browser Engine for KDE project */
-@-khtml-keyframes slideFromDown {
-  from { -khtml-transform: translateY(100%); }
-  to { -khtml-transform: translateY(0%); }
-}
-
-/* Other browsers */
 @keyframes slideFromDown {
   from { transform: translateY(100%); }
   to { transform: translateY(0%); } 
 }
 
-
 /* Class */
 .slideFromDown {
-  -webkit-animation: slideFromDown var(--slide-from-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -moz-animation: slideFromDown var(--slide-from-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -ms-animation: slideFromDown var(--slide-from-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -o-animation: slideFromDown var(--slide-from-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
   animation: slideFromDown var(--slide-from-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
 }

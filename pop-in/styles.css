@@ -39,63 +39,14 @@
 *
 */
 
-
 /*
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * MOTTO: I'll always do more 😜!!!
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-
-
 /* Pop In Animation */
 
-/* WEBKIT: Chrome */
-@-webkit-keyframes popIn {
-  0% { -webkit-transform: scale(1.2); }
-  25% { -webkit-transform: scale(0.8); }
-  50% { -webkit-transform: scale(1.1); }
-  75% { -webkit-transform: scale(0.9); }
-  100% { -webkit-transform: scale(1); }
-}
-
-/* MOZ: Firefox */
-@-moz-keyframes popIn {
-  0% { -moz-transform: scale(1.2); }
-  25% { -moz-transform: scale(0.8); }
-  50% { -moz-transform: scale(1.1); }
-  75% { -moz-transform: scale(0.9); }
-  100% { -moz-transform: scale(1); }
-}
-
-/* MS: Edge & Internet Explorer */
-@-ms-keyframes popIn {
-  0% { -ms-transform: scale(1.2); }
-  25% { -ms-transform: scale(0.8); }
-  50% { -ms-transform: scale(1.1); }
-  75% { -ms-transform: scale(0.9); }
-  100% { -ms-transform: scale(1); }
-}
-
-/* O: Opera */
-@-o-keyframes popIn {
-  0% { -o-transform: scale(1.2); }
-  25% { -o-transform: scale(0.8); }
-  50% { -o-transform: scale(1.1); }
-  75% { -o-transform: scale(0.9); }
-  100% { -o-transform: scale(1); }
-}
-
-/* KHTML: Browser Engine for KDE project */
-@-khtml-keyframes popIn {
-  0% { -khtml-transform: scale(1.2); }
-  25% { -khtml-transform: scale(0.8); }
-  50% { -khtml-transform: scale(1.1); }
-  75% { -khtml-transform: scale(0.9); }
-  100% { -khtml-transform: scale(1); }
-}
-
-/* Other browsers */
 @keyframes popIn {
   0% { transform: scale(1.2); }
   25% { transform: scale(0.8); }
@@ -106,9 +57,5 @@
 
 /* Class */
 .popIn {
-  -webkit-animation: popIn var(--pop-in-animation-duration, var(--pop-animation-duration, 1s)) ease-in-out var(--pop-in-animation-delay, var(--pop-animation-delay, 0ms)) forwards;
-  -moz-animation: popIn var(--pop-in-animation-duration, var(--pop-animation-duration, 1s)) ease-in-out var(--pop-in-animation-delay, var(--pop-animation-delay, 0ms)) forwards;
-  -ms-animation: popIn var(--pop-in-animation-duration, var(--pop-animation-duration, 1s)) ease-in-out var(--pop-in-animation-delay, var(--pop-animation-delay, 0ms)) forwards;
-  -o-animation: popIn var(--pop-in-animation-duration, var(--pop-animation-duration, 1s)) ease-in-out var(--pop-in-animation-delay, var(--pop-animation-delay, 0ms)) forwards;
   animation: popIn var(--pop-in-animation-duration, var(--pop-animation-duration, 1s)) ease-in-out var(--pop-in-animation-delay, var(--pop-animation-delay, 0ms)) forwards;
 }

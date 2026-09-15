@@ -39,59 +39,20 @@
 *
 */
 
-
 /*
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * MOTTO: I'll always do more 😜!!!
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-
-
 /* Loop Animation */
 
-/* WEBKIT: Chrome */
-@-webkit-keyframes loop {
-  from { left: -50%; }
-  to { left: 100%; } 
-}
-
-/* MOZ: Firefox */
-@-moz-keyframes loop {
-  from { left: -50%; }
-  to { left: 100%; } 
-}
-
-/* MS: Edge & Internet Explorer */
-@-ms-keyframes loop {
-  from { left: -50%; }
-  to { left: 100%; } 
-}
-
-/* O: Opera */
-@-o-keyframes loop {
-  from { left: -50%; }
-  to { left: 100%; } 
-}
-
-/* KHTML: Browser Engine for KDE project */
-@-khtml-keyframes loop {
-  from { left: -50%; }
-  to { left: 100%; } 
-}
-
-/* Other browsers */
 @keyframes loop {
   from { left: -50%; }
   to { left: 100%; } 
 }
 
-
 /* Class */
 .loop {
-  -webkit-animation: loop var(--loop-animation-duration, 2s) ease var(--loop-animation-delay, 0ms) infinite;
-  -moz-animation: loop var(--loop-animation-duration, 2s) ease var(--loop-animation-delay, 0ms) infinite;
-  -ms-animation: loop var(--loop-animation-duration, 2s) ease var(--loop-animation-delay, 0ms) infinite;
-  -o-animation: loop var(--loop-animation-duration, 2s) ease var(--loop-animation-delay, 0ms) infinite;
   animation: loop var(--loop-animation-duration, 2s) ease var(--loop-animation-delay, 0ms) infinite;
 }

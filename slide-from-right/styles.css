@@ -39,59 +39,20 @@
 *
 */
 
-
 /*
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * MOTTO: I'll always do more 😜!!!
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-
-
 /* Slide From Right Animation */
 
-/* WEBKIT: Chrome */
-@-webkit-keyframes slideFromRight {
-  from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(0%); }
-}
-
-/* MOZ: Firefox */
-@-moz-keyframes slideFromRight {
-  from { -moz-transform: translateX(100%); }
-  to { -moz-transform: translateX(0%); } 
-}
-
-/* MS: Edge & Internet Explorer */
-@-ms-keyframes slideFromRight {
-  from { -ms-transform: translateX(100%); }
-  to { -ms-transform: translateX(0%); }
-}
-
-/* O: Opera */
-@-o-keyframes slideFromRight {
-  from { -o-transform: translateX(100%); }
-  to { -o-transform: translateX(0%); }
-}
-
-/* KHTML: Browser Engine for KDE project */
-@-khtml-keyframes slideFromRight {
-  from { -khtml-transform: translateX(100%); }
-  to { -khtml-transform: translateX(0%); }
-}
-
-/* Other browsers */
 @keyframes slideFromRight {
   from { transform: translateX(100%); }
   to { transform: translateX(0%); } 
 }
 
-
 /* Class */
 .slideFromRight {
-  -webkit-animation: slideFromRight var(--slide-from-right-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-right-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -moz-animation: slideFromRight var(--slide-from-right-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-right-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -ms-animation: slideFromRight var(--slide-from-right-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-right-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -o-animation: slideFromRight var(--slide-from-right-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-right-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
   animation: slideFromRight var(--slide-from-right-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-from-right-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
 }

@@ -39,59 +39,20 @@
 *
 */
 
-
 /*
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * MOTTO: I'll always do more 😜!!!
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-
-
 /* Slide Up Animation */
 
-/* WEBKIT: Chrome */
-@-webkit-keyframes slideUp {
-  from { -webkit-transform: translateY(0%); }
-  to { -webkit-transform: translateY(-100%); }
-}
-
-/* MOZ: Firefox */
-@-moz-keyframes slideUp {
-  from { -moz-transform: translateY(0%); }
-  to { -moz-transform: translateY(-100%); }
-}
-
-/* MS: Edge & Internet Explorer */
-@-ms-keyframes slideUp {
-  from { -ms-transform: translateY(0%); }
-  to { -ms-transform: translateY(-100%); }
-}
-
-/* O: Opera */
-@-o-keyframes slideUp {
-  from { -o-transform: translateY(0%); }
-  to { -o-transform: translateY(-100%); }
-}
-
-/* KHTML: Browser Engine for KDE project */
-@-khtml-keyframes slideUp {
-  from { -khtml-transform: translateY(0%); }
-  to { -khtml-transform: translateY(-100%); }
-}
-
-/* Other browsers */
 @keyframes slideUp {
   from { transform: translateY(0%); }
   to { transform: translateY(-100%); } 
 }
 
-
 /* Class */
 .slideUp {
-  -webkit-animation: slideUp var(--slide-up-animation-duration, var(--slide-animation-duration, 500ms)) var(--slide-up-animation-timing-function, var(--slide-animation-timing-function, ease)) var(--slide-up-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -moz-animation: slideUp var(--slide-up-animation-duration, var(--slide-animation-duration, 500ms)) var(--slide-up-animation-timing-function, var(--slide-animation-timing-function, ease)) var(--slide-up-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -ms-animation: slideUp var(--slide-up-animation-duration, var(--slide-animation-duration, 500ms)) var(--slide-up-animation-timing-function, var(--slide-animation-timing-function, ease)) var(--slide-up-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -o-animation: slideUp var(--slide-up-animation-duration, var(--slide-animation-duration, 500ms)) var(--slide-up-animation-timing-function, var(--slide-animation-timing-function, ease)) var(--slide-up-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
   animation: slideUp var(--slide-up-animation-duration, var(--slide-animation-duration, 500ms)) var(--slide-up-animation-timing-function, var(--slide-animation-timing-function, ease)) var(--slide-up-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
 }

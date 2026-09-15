@@ -39,61 +39,22 @@
 *
 */
 
-
 /*
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * MOTTO: I'll always do more 😜!!!
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-
-
 /* Fade Out Animation */
 /* TODO: Create `fade-out-animation-min` and `fade-out-animation-max` variables 
  *       to repleace the hard-coded 1 & 0 opacity values */
 
-/* WEBKIT: Chrome */
-@-webkit-keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; } 
-}
-
-/* MOZ: Firefox */
-@-moz-keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-/* MS: Edge & Internet Explorer */
-@-ms-keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-/* O: Opera */
-@-o-keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-/* KHTML: Browser Engine for KDE project */
-@-khtml-keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-/* Other browsers */
 @keyframes fadeOut { 
   from { opacity: 1; }
   to { opacity: 0; }
 }
 
-
 /* Class */
 .fadeOut {
-  -webkit-animation: fadeOut var(--fade-out-animation-duration, var(--fade-animation-duration, 500ms)) ease var(--fade-out-animation-delay, var(--fade-animation-delay, 0ms)) forwards;
-  -moz-animation: fadeOut var(--fade-out-animation-duration, var(--fade-animation-duration, 500ms)) ease var(--fade-out-animation-delay, var(--fade-animation-delay, 0ms)) forwards;
-  -ms-animation: fadeOut var(--fade-out-animation-duration, var(--fade-animation-duration, 500ms)) ease var(--fade-out-animation-delay, var(--fade-animation-delay, 0ms)) forwards;
-  -o-animation: fadeOut var(--fade-out-animation-duration, var(--fade-animation-duration, 500ms)) ease var(--fade-out-animation-delay, var(--fade-animation-delay, 0ms)) forwards;
   animation: fadeOut var(--fade-out-animation-duration, var(--fade-animation-duration, 500ms)) ease var(--fade-out-animation-delay, var(--fade-animation-delay, 0ms)) forwards;
 }

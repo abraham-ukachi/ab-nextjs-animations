@@ -39,59 +39,20 @@
 *
 */
 
-
 /*
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * MOTTO: I'll always do more 😜!!!
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-
-
 /* Slide Down Animation */
 
-/* WEBKIT: Chrome */
-@-webkit-keyframes slideDown {
-  from { -webkit-transform: translateY(0%); }
-  to { -webkit-transform: translateY(100%); }
-}
-
-/* MOZ: Firefox */
-@-moz-keyframes slideDown {
-  from { -moz-transform: translateY(0%); }
-  to { -moz-transform: translateY(100%); } 
-}
-
-/* MS: Edge & Internet Explorer */
-@-ms-keyframes slideDown {
-  from { -ms-transform: translateY(0%); }
-  to { -ms-transform: translateY(100%); }
-}
-
-/* O: Opera */
-@-o-keyframes slideDown {
-  from { -o-transform: translateY(0%); }
-  to { -o-transform: translateY(100%); }
-}
-
-/* KHTML: Browser Engine for KDE project */
-@-khtml-keyframes slideDown {
-  from { -khtml-transform: translateY(0%); }
-  to { -khtml-transform: translateY(100%); }
-}
-
-/* Other browsers */
 @keyframes slideDown {
   from { transform: translateY(0%); }
   to { transform: translateY(100%); } 
 }
 
-
 /* Class */
 .slideDown {
-  -webkit-animation: slideDown var(--slide-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -moz-animation: slideDown var(--slide-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -ms-animation: slideDown var(--slide-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -o-animation: slideDown var(--slide-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
   animation: slideDown var(--slide-down-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-down-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
 }

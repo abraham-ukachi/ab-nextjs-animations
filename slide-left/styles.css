@@ -39,59 +39,20 @@
 *
 */
 
-
 /*
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * MOTTO: I'll always do more 😜!!!
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-
-
 /* Slide Left Animation */
 
-/* WEBKIT: Chrome */
-@-webkit-keyframes slideLeft {
-  from { -webkit-transform: translateX(0%); }
-  to { -webkit-transform: translateX(-100%); }
-}
-
-/* MOZ: Firefox */
-@-moz-keyframes slideLeft {
-  from { -moz-transform: translateX(0%); }
-  to { -moz-transform: translateX(-100%); } 
-}
-
-/* MS: Edge & Internet Explorer */
-@-ms-keyframes slideLeft {
-  from { -ms-transform: translateX(0%); }
-  to { -ms-transform: translateX(-100%); }
-}
-
-/* O: Opera */
-@-o-keyframes slideLeft {
-  from { -o-transform: translateX(0%); }
-  to { -o-transform: translateX(-100%); }
-}
-
-/* KHTML: Browser Engine for KDE project */
-@-khtml-keyframes slideLeft {
-  from { -khtml-transform: translateX(0%); }
-  to { -khtml-transform: translateX(-100%); }
-}
-
-/* Other browsers */
 @keyframes slideLeft {
   from { transform: translateX(0%); }
   to { transform: translateX(-100%); } 
 }
 
-
 /* Class */
 .slideLeft {
-  -webkit-animation: slideLeft var(--slide-left-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-left-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -moz-animation: slideLeft var(--slide-left-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-left-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -ms-animation: slideLeft var(--slide-left-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-left-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
-  -o-animation: slideLeft var(--slide-left-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-left-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
   animation: slideLeft var(--slide-left-animation-duration, var(--slide-animation-duration, 500ms)) ease var(--slide-left-animation-delay, var(--slide-animation-delay, 0ms)) forwards;
 }

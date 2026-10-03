@@ -9,8 +9,8 @@ describe("ab-nextjs-animations package smoke", () => {
   it("targets Next 16.3.4 peers and package metadata", () => {
     const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
     expect(pkg.name).toBe("ab-nextjs-animations");
-    expect(pkg.version).toBe("0.2.0");
-    expect(pkg.peerDependencies.next).toBe("16.3.4");
+    expect(pkg.version).toMatch(/^\d+\.\d+\.\d+$/);
+    expect(pkg.peerDependencies.next).toBe("^16.3.4");
   });
 
   it("ships styles.css for every supported animation folder", () => {

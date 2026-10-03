@@ -1,10 +1,29 @@
 {
   "name": "ab-nextjs-animations",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "💫 A lightweight collection of React animations created by Abraham Ukachi, and optimized for Next.js applications 😎.",
   "type": "module",
   "main": "index.ts",
   "types": "types/index.d.ts",
+  "files": [
+    "index.ts",
+    "types",
+    "fade-in",
+    "fade-out",
+    "loop",
+    "pop-in",
+    "slide-down",
+    "slide-from-down",
+    "slide-from-left",
+    "slide-from-right",
+    "slide-from-up",
+    "slide-left",
+    "slide-right",
+    "slide-up",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "homepage": "https://github.com/abraham-ukachi/ab-nextjs-animations#readme",
   "repository": {
     "type": "git",
@@ -15,7 +34,9 @@
   },
   "scripts": {
     "lint": "eslint . --fix",
-    "test": "vitest run"
+    "test": "vitest run",
+    "check:publish": "node scripts/check-publish-deps.mjs",
+    "prepublishOnly": "node scripts/check-publish-deps.mjs"
   },
   "keywords": [
     "react",
@@ -33,7 +54,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "next": "16.3.4",
+    "next": "^16.3.4",
     "react": "^19",
     "react-dom": "^19"
   },

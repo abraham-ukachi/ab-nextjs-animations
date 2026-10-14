@@ -102,6 +102,18 @@ A list of all the supported **css animations** and their current status:
 > NOTE: 
 
 
+## Component Animations (0.2.4)
+
+Global classes for UI components, imported once per stylesheet (e.g. `import 'ab-nextjs-animations/slide-step/styles.css'`). Every one honours `prefers-reduced-motion: reduce`, and most also honour a `data-ab-reduced-motion="true"` ancestor.
+
+| Folder | Classes | Reduced motion |
+| --- | --- | --- |
+| `slide-step` | `ab-slide-step-in`, `ab-slide-step-out` (+ `data-ab-direction="forward"` / `"back"`) | opacity cross-fade, no movement |
+| `wire` | `ab-wire-draw`, `ab-wire-pulse` (`data-ab-paused` pauses) | drawn wires, pulse frozen at the poster frame |
+| `spin` | `ab-spin` | slow opacity breathe |
+| `progress-sweep` | `ab-progress-sweep` | full, softened static bar |
+| `motion` | `ab-motion-colors`, `-interactive`, `-transform`, `-size`, `-press`, `-lift` + `--ab-motion-*` tokens | transitions off, no scale |
+
 ## TODOs
 
 - [ ] Optimize all **`.ts`** animation files

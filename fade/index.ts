@@ -46,11 +46,11 @@ export const AB_FADE_REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
 const FadeAnimation: Animation = {
   // 🎞️ keyframes
   keyframes: {
-    from: { opacity: 0 }, // 🏁 start
-    to: { opacity: 1 }, // 🎯 end
+    from: { opacity: 'var(--fade-from, 0)' }, // 🏁 start (custom property, default 0)
+    to: { opacity: 'var(--fade-to, 1)' }, // 🎯 end (custom property, default 1)
   },
-  // 🔗 CSS shorthand
-  ref: 'fade 500ms ease both',
+  // 🔗 CSS shorthand (keyframes are named `abFade` in fade/styles.css; vars match the class)
+  ref: 'abFade var(--fade-animation-duration, 500ms) var(--fade-animation-easing, ease) var(--fade-animation-delay, 0ms) both',
 };
 
 /**

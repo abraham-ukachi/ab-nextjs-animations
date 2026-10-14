@@ -41,8 +41,8 @@
 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-/* 🌫️ Fade keyframes: from → to, driven by custom properties */
-@keyframes fade {
+/* 🌫️ Fade keyframes (namespaced `abFade`, so it can't clash with a consumer's own generic keyframes): from → to, driven by custom properties */
+@keyframes abFade {
   from { opacity: var(--fade-from, 0); } /* 🏁 start opacity (default 0) */
   to { opacity: var(--fade-to, 1); } /* 🎯 end opacity (default 1) */
 }
@@ -50,7 +50,7 @@
 /* 🌫️ Class */
 .fade {
   /* 🎞️ duration / easing / delay are all overridable */
-  animation: fade var(--fade-animation-duration, 500ms) var(--fade-animation-easing, ease) var(--fade-animation-delay, 0ms) both;
+  animation: abFade var(--fade-animation-duration, 500ms) var(--fade-animation-easing, ease) var(--fade-animation-delay, 0ms) both;
 }
 
 /* ♿ reduced motion: no animation, jump straight to the end state */

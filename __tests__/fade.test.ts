@@ -62,7 +62,9 @@ describe('fade (G28)', () => {
   })
 
   it('exposes an Animation object and a reduced-motion helper', () => {
-    expect(FadeAnimation.keyframes.to.opacity).toBe(1) // 🎯
+    expect(FadeAnimation.keyframes.to.opacity).toBe('var(--fade-to, 1)') // 🎯 custom property
+    expect(FadeAnimation.keyframes.from.opacity).toBe('var(--fade-from, 0)') // 🏁
+    expect(FadeAnimation.ref).toMatch(/^abFade /) // 🏷️ namespaced keyframes
     expect(getAbFadeAnimation(true)).toBe('none') // ♿
     expect(getAbFadeAnimation(false)).toBe(FadeAnimation.ref) // 🎞️
     expect(AB_FADE_REDUCED_MOTION_QUERY).toBe('(prefers-reduced-motion: reduce)') // 🔍
@@ -75,4 +77,22 @@ describe('fade (G28)', () => {
     vi.stubGlobal('window', { matchMedia: () => { throw new Error('x') } }) // 💥
     expect(prefersAbReducedMotion()).toBe(false) // 🛟
   })
+
+  it('names the keyframes abFade (not a generic `fade`)', () => {
+    const css = read('fade/styles.css') // 🎨
+    expect(css).toContain('@keyframes abFade') // ✅
+    expect(css).not.toMatch(/@keyframes fade\b/) // 🚫
+  })
+
+  it('exports map keeps every existing import path working', async () => {
+    const pkg = JSON.parse(read('package.json')) // 📦
+    expect(pkg.exports['.'].default).toBe('./index.ts') // 🏠 root
+    expect(pkg.exports['./*']).toBe('./*') // 🎨 e.g. ab-nextjs-animations/slide-from-right/styles.css
+    for (const f of ['fade', 'fade-in', 'fade-out', 'slide-from-right', 'loop']) expect(pkg.exports['./' + f]).toBe(`./${f}/index.ts`) // 📁 folder imports
+    const { createRequire } = await import('node:module') // 🔎 real resolution through the exports map
+    const req = createRequire(join(root, '__tests__/x.js')) // 🔎 resolve from inside the package
+    expect(req.resolve('ab-nextjs-animations/slide-from-right/styles.css')).toBe(join(root, 'slide-from-right/styles.css')) // ✅ css path
+    expect(req.resolve('ab-nextjs-animations/fade')).toBe(join(root, 'fade/index.ts')) // ✅ folder
+  })
 })
+

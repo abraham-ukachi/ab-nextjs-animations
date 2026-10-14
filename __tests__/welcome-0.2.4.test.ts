@@ -155,3 +155,13 @@ describe('registry + packaging 📦', () => {
     }
   })
 })
+
+describe('README: class naming (James review) 📖', () => {
+  it('documents the ab- prefix for new classes and the unprefixed legacy ones', () => {
+    const md = read('README.md') // 📖
+    expect(md).toContain('### Class naming: `ab-` vs legacy') // 🏷️
+    expect(md).toMatch(/Legacy[\s\S]*not renamed/) // 🧓
+    for (const name of NEW) for (const cls of classes(read(`${name}/styles.css`))) expect(cls).toMatch(/^ab-/) // ✅ the rule holds
+  })
+})
+

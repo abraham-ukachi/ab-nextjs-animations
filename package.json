@@ -10,6 +10,7 @@
     "types",
     "fade-in",
     "fade-out",
+    "fade",
     "loop",
     "pop-in",
     "slide-down",
@@ -35,6 +36,7 @@
   "scripts": {
     "lint": "eslint . --fix",
     "test": "vitest run",
+    "typecheck": "tsc --noEmit -p .",
     "check:publish": "node scripts/check-publish-deps.mjs",
     "prepublishOnly": "node scripts/check-publish-deps.mjs"
   },

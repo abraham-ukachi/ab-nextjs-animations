@@ -28,7 +28,7 @@
 * @name: Fade In - Animation 
 * @file: fade-in/styles.css
 * @type: CSS Stylesheet
-* @authors: Abraham Ukachi <abraham.ukachi@laplateforme.io>
+* @authors: Abraham Ukachi <abrahamukachi@gmail.com>
 *
 * Example usage:
 *   1+|> 
@@ -55,4 +55,13 @@
 /* Class */
 .fadeIn {
   animation: fadeIn var(--fade-in-animation-duration, var(--fade-animation-duration, 500ms)) ease var(--fade-in-animation-delay, var(--fade-animation-delay, 0ms)) forwards;
+}
+
+
+/* ♿ reduced motion (G28): no animation, jump to the end state */
+@media (prefers-reduced-motion: reduce) {
+  .fadeIn {
+    animation: none; /* 🚫 no fade */
+    opacity: 1; /* 🎯 final opacity */
+  }
 }

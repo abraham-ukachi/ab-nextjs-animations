@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/abraham-ukachi/ab-nextjs-animations/compare/v0.2.3...v0.2.4) (2026-10-14)
+
+* **slide-step (new):** direction-aware slide enter / leave. `.ab-slide-step-in` / `.ab-slide-step-out` (keyframes `abSlideStepIn` / `abSlideStepOut`); forward / back from `data-ab-direction` on the element or an ancestor; RTL mirrors under `[dir='rtl']` or `--ab-slide-step-flip: -1`; tunables `--ab-slide-step-duration` / `-easing` / `-distance`; `getAbSlideStepDirection(from, to, count, loop)` (shortest way round when looping). Reduced motion (OS or `[data-ab-reduced-motion='true']`): opacity cross-fade only (`--ab-slide-step-reduced-duration`, default 120ms)
+* **wire (new):** SVG flow-diagram wires. `.ab-wire-draw` (draw-on, staggered by `--ab-wire-index`) and `.ab-wire-pulse` (fade in, then a dash travels; `--ab-wire-pulse-iterations`, `-duration`, `-delay`, `-stagger`); pause inside `[data-ab-paused='true']`. Reduced motion: wires drawn, pulse frozen at `--ab-wire-poster`
+* **spin (new):** `.ab-spin` for loading rings. Reduced motion: slow opacity "breathe", no rotation
+* **progress-sweep (new):** `.ab-progress-sweep` indeterminate sweep (RTL-mirrored). Reduced motion: full, softened static bar
+* **motion (new):** tokens `--ab-motion-duration-short|medium|long`, `--ab-motion-ease-standard|emphasized`, `--ab-motion-press-scale`, `--ab-motion-lift-scale`; transition classes `.ab-motion-colors`, `.ab-motion-interactive`, `.ab-motion-transform`, `.ab-motion-size`, `.ab-motion-press`, `.ab-motion-lift` (`AB_MOTION`, `AB_MOTION_TOKENS`). Reduced motion: transitions off, no scale feedback
+* **Registry:** `slide-step-in`, `slide-step-out`, `wire-draw`, `wire-pulse`, `spin`, `progress-sweep` added to `supportedAnimations` (19 total); every new folder + `styles.css` in `exports` / `files`
+* **Docs:** README "Class naming: `ab-` vs legacy" (new classes are `ab-`-prefixed; legacy names are not renamed)
+
 ### [0.2.3](https://github.com/abraham-ukachi/ab-nextjs-animations/compare/v0.2.2...v0.2.3) (2026-10-14)
 
 * **fade (G28):** new `fade/` animation — `.fade` (keyframes `abFade`) driven by `--fade-from` / `--fade-to`; `ref` uses the same vars (+ duration / easing / delay vars), `FadeAnimation`, `getAbFadeAnimation(reduced)`, `prefersAbReducedMotion()`

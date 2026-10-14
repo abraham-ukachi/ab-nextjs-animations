@@ -87,6 +87,11 @@ import SlideFromRightAnimation from './slide-from-right';
 import SlideDownAnimation from './slide-down';
 import SlideUpAnimation from './slide-up';
 import LoopAnimation from './loop';
+// 🎬 0.2.4 (Welcome v6): direction-aware slides, flow-diagram wires, spinners, progress sweep
+import { SlideStepInAnimation, SlideStepOutAnimation } from './slide-step';
+import { WireDrawAnimation, WirePulseAnimation } from './wire';
+import SpinAnimation from './spin';
+import ProgressSweepAnimation from './progress-sweep';
 
 
 
@@ -106,6 +111,12 @@ export const supportedAnimations: Array<{ name: string, animation: Animation }> 
   { name: 'slide-down', animation: SlideDownAnimation },
   { name: 'slide-up', animation: SlideUpAnimation },
   { name: 'loop', animation: LoopAnimation },
+  { name: 'slide-step-in', animation: SlideStepInAnimation }, // ⏭️ 0.2.4
+  { name: 'slide-step-out', animation: SlideStepOutAnimation }, // 👋 0.2.4
+  { name: 'wire-draw', animation: WireDrawAnimation }, // 🖊️ 0.2.4
+  { name: 'wire-pulse', animation: WirePulseAnimation }, // ✨ 0.2.4
+  { name: 'spin', animation: SpinAnimation }, // 🌀 0.2.4
+  { name: 'progress-sweep', animation: ProgressSweepAnimation }, // 🔁 0.2.4
 ];
 
 
@@ -169,4 +180,9 @@ const abAnimations: Animations = { keyframes, refs };
 
 export default abAnimations;
 
-
+// 🎬 0.2.4 helpers + class names (also importable per folder, e.g. 'ab-nextjs-animations/slide-step')
+export { getAbSlideStepDirection, AB_SLIDE_STEP_IN_CLASS, AB_SLIDE_STEP_OUT_CLASS, type AbSlideStepDirection } from './slide-step';
+export { AB_WIRE_DRAW_CLASS, AB_WIRE_PULSE_CLASS } from './wire';
+export { AB_SPIN_CLASS } from './spin';
+export { AB_PROGRESS_SWEEP_CLASS } from './progress-sweep';
+export { AB_MOTION, AB_MOTION_TOKENS, AB_REDUCED_MOTION_QUERY, AB_REDUCED_MOTION_ATTRIBUTE } from './motion';

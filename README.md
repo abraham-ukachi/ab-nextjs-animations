@@ -102,6 +102,24 @@ A list of all the supported **css animations** and their current status:
 > NOTE: 
 
 
+## Component Animations (0.2.4)
+
+Global classes for UI components, imported once per stylesheet (e.g. `import 'ab-nextjs-animations/slide-step/styles.css'`). Every one honours `prefers-reduced-motion: reduce`, and most also honour a `data-ab-reduced-motion="true"` ancestor.
+
+| Folder | Classes | Reduced motion |
+| --- | --- | --- |
+| `slide-step` | `ab-slide-step-in`, `ab-slide-step-out` (+ `data-ab-direction="forward"` / `"back"`) | opacity cross-fade, no movement |
+| `wire` | `ab-wire-draw`, `ab-wire-pulse` (`data-ab-paused` pauses) | drawn wires, pulse frozen at the poster frame |
+| `spin` | `ab-spin` | slow opacity breathe |
+| `progress-sweep` | `ab-progress-sweep` | full, softened static bar |
+| `motion` | `ab-motion-colors`, `-interactive`, `-transform`, `-size`, `-press`, `-lift` + `--ab-motion-*` tokens | transitions off, no scale |
+
+### Class naming: `ab-` vs legacy
+
+* **New (0.2.4+):** every class is prefixed with `ab-` (`ab-slide-step-in`, `ab-wire-pulse`, `ab-spin`, `ab-progress-sweep`, `ab-motion-*`) and every keyframe with `ab` (`abSlideStepIn`, `abWirePulse`, …), so they can't clash with an app's own CSS.
+* **Legacy (≤ 0.2.3):** the original animations keep their unprefixed names (`.fade`, `.fadeIn`, `.fadeOut`, `.popIn`, `.slideLeft`, …, Tailwind `animate-*`). They are **not renamed**, so existing apps keep working.
+* New animations always use the `ab-` prefix.
+
 ## TODOs
 
 - [ ] Optimize all **`.ts`** animation files

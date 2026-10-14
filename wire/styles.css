@@ -1,0 +1,94 @@
+/* 
+* @license MIT
+* ~~~~~~~~~~~~
+* ab-nextjs-animations
+* ~~~~~~~~~~~~ 
+* Copyright (c) 2026 Abraham Ukachi. The abElements Project.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the 'Software'), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions: 
+*  
+* The above copyright notice and this permission notice shall be included in all 
+* copies or substantial portions of the Software. 
+*
+* THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* @project: ab-nextjs-animations
+* @name: abWire
+* @file: wire/styles.css
+* @type: CSS — SVG wire draw-on + travelling pulse (flow diagrams)
+* @authors: Abraham Ukachi <abrahamukachi@gmail.com>
+*/
+
+/*
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* MOTTO: We'll always do more 😜!!!
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+/* 🔌 WIRE — for SVG paths drawn with pathLength="100":
+*    .ab-wire-draw    draws the wire on (stroke-dashoffset 100 → 0), staggered by --ab-wire-index
+*    .ab-wire-pulse   fades a short dash in, then sends it along the wire (loops)
+*  ⏸️ pause everything inside [data-ab-paused='true'] (e.g. an inactive carousel slide)
+*
+*  🎛️ Tunables:
+*    --ab-wire-index             0, 1, 2… (stagger position)
+*    --ab-wire-draw-duration     default 600ms
+*    --ab-wire-draw-stagger      default 40ms
+*    --ab-wire-pulse-delay       default 600ms (after the draw)
+*    --ab-wire-pulse-stagger     default 180ms
+*    --ab-wire-pulse-duration    default 2400ms
+*    --ab-wire-pulse-iterations  default infinite (e.g. 3 on phones)
+*    --ab-wire-poster            dash position shown under reduced motion (default 55)
+*/
+
+/* 🖊️ draw on */
+.ab-wire-draw {
+  stroke-dasharray: 100; /* 📏 full length (pathLength=100) */
+  stroke-dashoffset: 100; /* 🙈 hidden before the draw */
+  animation: abWireDraw var(--ab-wire-draw-duration, 600ms) cubic-bezier(.2, .8, .2, 1) forwards; /* 🖊️ */
+  animation-delay: calc(var(--ab-wire-index, 0) * var(--ab-wire-draw-stagger, 40ms)); /* ⏱️ stagger */
+}
+
+/* ✨ travelling pulse */
+.ab-wire-pulse {
+  stroke-dasharray: 6 94; /* ✨ short dash */
+  stroke-dashoffset: 100; /* 📍 start */
+  opacity: 0; /* 🙈 until the wires are drawn */
+  animation:
+    abWireReveal 200ms ease forwards, /* 👀 fade in */
+    abWirePulse var(--ab-wire-pulse-duration, 2400ms) linear var(--ab-wire-pulse-iterations, infinite); /* 🔁 travel */
+  animation-delay:
+    var(--ab-wire-pulse-delay, 600ms),
+    calc(var(--ab-wire-pulse-delay, 600ms) + var(--ab-wire-index, 0) * var(--ab-wire-pulse-stagger, 180ms)); /* ⏱️ */
+}
+
+/* ⏸️ paused (inactive slide, off-screen…) */
+[data-ab-paused='true'] .ab-wire-draw,
+[data-ab-paused='true'] .ab-wire-pulse {
+  animation-play-state: paused; /* ⏸️ */
+}
+
+/* 🎞️ keyframes */
+@keyframes abWireDraw { to { stroke-dashoffset: 0; } } /* 🖊️ */
+@keyframes abWireReveal { to { opacity: 1; } } /* 👀 */
+@keyframes abWirePulse { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } } /* ✨ */
+
+/* ♿ reduced motion: wires drawn, pulses frozen at the poster frame */
+@media (prefers-reduced-motion: reduce) {
+  .ab-wire-draw { animation: none; stroke-dashoffset: 0; } /* 🖊️ static */
+  .ab-wire-pulse { animation: none; opacity: 1; stroke-dashoffset: var(--ab-wire-poster, 55); } /* 🖼️ frozen */
+}
+[data-ab-reduced-motion='true'] .ab-wire-draw { animation: none; stroke-dashoffset: 0; } /* ♿ forced */
+[data-ab-reduced-motion='true'] .ab-wire-pulse { animation: none; opacity: 1; stroke-dashoffset: var(--ab-wire-poster, 55); } /* ♿ forced */

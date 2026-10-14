@@ -1,0 +1,56 @@
+/* 
+* @license MIT
+* ~~~~~~~~~~~~
+* ab-nextjs-animations
+* ~~~~~~~~~~~~ 
+* Copyright (c) 2026 Abraham Ukachi. The abElements Project.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the 'Software'), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions: 
+*  
+* The above copyright notice and this permission notice shall be included in all 
+* copies or substantial portions of the Software. 
+*
+* THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* @project: ab-nextjs-animations
+* @name: abProgressSweep
+* @file: progress-sweep/index.ts
+* @type: TypeScript — indeterminate progress sweep
+* @authors: Abraham Ukachi <abrahamukachi@gmail.com>
+*
+* Example usage:
+*   1+|> <div className="ab-progress-sweep" />
+*/
+
+/*
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* MOTTO: We'll always do more 😜!!!
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+// 🧩 animation type
+import type { Animation } from '../types/index.d';
+
+// 🏷️ class name shipped by progress-sweep/styles.css
+export const AB_PROGRESS_SWEEP_CLASS = 'ab-progress-sweep';
+
+/* 🔁 sweep (LTR keyframes; RTL uses abProgressSweepRtl in CSS) */
+const ProgressSweepAnimation: Animation = {
+  keyframes: { '0%': { transform: 'translateX(-100%)' }, '100%': { transform: 'translateX(250%)' } }, // 🏁 → 🎯
+  ref: 'abProgressSweep var(--ab-progress-sweep-duration, 1.4s) ease-in-out infinite', // 🔗
+};
+
+// 📦 default export
+export default ProgressSweepAnimation;

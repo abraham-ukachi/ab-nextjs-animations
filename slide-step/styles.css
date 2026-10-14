@@ -1,0 +1,122 @@
+/* 
+* @license MIT
+* ~~~~~~~~~~~~
+* ab-nextjs-animations
+* ~~~~~~~~~~~~ 
+* Copyright (c) 2026 Abraham Ukachi. The abElements Project.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the 'Software'), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions: 
+*  
+* The above copyright notice and this permission notice shall be included in all 
+* copies or substantial portions of the Software. 
+*
+* THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* @project: ab-nextjs-animations
+* @name: abSlideStep
+* @file: slide-step/styles.css
+* @type: CSS — direction-aware slide enter / leave (carousels, steppers)
+* @authors: Abraham Ukachi <abrahamukachi@gmail.com>
+*/
+
+/*
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* MOTTO: We'll always do more 😜!!!
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+/* ➡️⬅️ SLIDE STEP — the slide that becomes active plays `.ab-slide-step-in`, the one that was active plays
+*  `.ab-slide-step-out`. Direction is read from `data-ab-direction="forward" | "back"` on the element
+*  or on any ancestor (default forward). RTL mirrors automatically under [dir='rtl'] (or set --ab-slide-step-flip: -1).
+*
+*  🎛️ Tunables:
+*    --ab-slide-step-duration           default 280ms
+*    --ab-slide-step-easing             default cubic-bezier(.2, .8, .2, 1)
+*    --ab-slide-step-distance           default 24px
+*    --ab-slide-step-flip               1 (LTR) / -1 (RTL)
+*    --ab-slide-step-reduced-duration   cross-fade length under reduced motion (default 120ms, 0ms = instant)
+*/
+
+/* 🧭 direction sign: forward = +1 (enter from the end side), back = -1 (enter from the start side) */
+.ab-slide-step-in,
+.ab-slide-step-out {
+  --_ab-step-sign: 1; /* ⏭️ forward by default */
+}
+[data-ab-direction='back'] .ab-slide-step-in,
+[data-ab-direction='back'] .ab-slide-step-out,
+.ab-slide-step-in[data-ab-direction='back'],
+.ab-slide-step-out[data-ab-direction='back'] {
+  --_ab-step-sign: -1; /* ⏮️ back */
+}
+
+/* 🌍 RTL: "forward" visually means right → left */
+[dir='rtl'] .ab-slide-step-in,
+[dir='rtl'] .ab-slide-step-out {
+  --ab-slide-step-flip: -1; /* 🔁 mirrored */
+}
+
+/* 📐 resolved offset = sign × flip × distance */
+.ab-slide-step-in,
+.ab-slide-step-out {
+  --_ab-step-offset: calc(var(--_ab-step-sign) * var(--ab-slide-step-flip, 1) * var(--ab-slide-step-distance, 24px));
+}
+
+/* ⏭️ forward enter / ⏮️ back enter */
+.ab-slide-step-in {
+  animation: abSlideStepIn var(--ab-slide-step-duration, 280ms) var(--ab-slide-step-easing, cubic-bezier(.2, .8, .2, 1)) both;
+}
+/* 👋 leave (only while it plays: afterwards the element's own hidden state applies) */
+.ab-slide-step-out {
+  animation: abSlideStepOut var(--ab-slide-step-duration, 280ms) var(--ab-slide-step-easing, cubic-bezier(.2, .8, .2, 1)) backwards;
+}
+
+/* 🎞️ enter: from the offset side → in place (visible for the whole run) */
+@keyframes abSlideStepIn {
+  from { opacity: 0; transform: translateX(var(--_ab-step-offset)); visibility: visible; } /* 🏁 */
+  to { opacity: 1; transform: none; visibility: visible; } /* 🎯 */
+}
+/* 🎞️ leave: in place → the opposite side (stays visible until the end, then the element's own state applies) */
+@keyframes abSlideStepOut {
+  from { opacity: 1; transform: none; visibility: visible; } /* 🏁 */
+  to { opacity: 0; transform: translateX(calc(-1 * var(--_ab-step-offset))); visibility: visible; } /* 🎯 */
+}
+
+/* 🌫️ reduced-motion cross-fade (no movement at all) */
+@keyframes abSlideStepFadeIn {
+  from { opacity: 0; visibility: visible; } /* 🏁 */
+  to { opacity: 1; visibility: visible; } /* 🎯 */
+}
+@keyframes abSlideStepFadeOut {
+  from { opacity: 1; visibility: visible; } /* 🏁 */
+  to { opacity: 0; visibility: visible; } /* 🎯 */
+}
+
+/* ♿ forced by the component (e.g. a `reducedMotion="always"` prop) */
+[data-ab-reduced-motion='true'] .ab-slide-step-in {
+  animation: abSlideStepFadeIn var(--ab-slide-step-reduced-duration, 120ms) linear both; /* 🌫️ */
+}
+[data-ab-reduced-motion='true'] .ab-slide-step-out {
+  animation: abSlideStepFadeOut var(--ab-slide-step-reduced-duration, 120ms) linear backwards; /* 🌫️ */
+}
+
+/* ♿ OS setting: never translate, only a short cross-fade */
+@media (prefers-reduced-motion: reduce) {
+  .ab-slide-step-in {
+    animation: abSlideStepFadeIn var(--ab-slide-step-reduced-duration, 120ms) linear both; /* 🌫️ */
+  }
+  .ab-slide-step-out {
+    animation: abSlideStepFadeOut var(--ab-slide-step-reduced-duration, 120ms) linear backwards; /* 🌫️ */
+  }
+}

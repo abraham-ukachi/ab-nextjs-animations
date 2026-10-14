@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/abraham-ukachi/ab-nextjs-animations/compare/v0.2.2...v0.2.3) (2026-10-14)
+
+* **fade (G28):** new `fade/` animation — `.fade` (keyframes `abFade`) driven by `--fade-from` / `--fade-to`; `ref` uses the same vars (+ duration / easing / delay vars), `FadeAnimation`, `getAbFadeAnimation(reduced)`, `prefersAbReducedMotion()`
+* **Reduced motion:** `.fade`, `.fadeIn` and `.fadeOut` turn the animation off under `prefers-reduced-motion: reduce` and jump to the final opacity
+* **Types:** fix `getAllKeyframes` typing (TS2322) and allow `.ts` import paths; new `typecheck` script; `exports` map (root, `./types`, every animation folder, and `./*` so `<name>/styles.css` paths keep working)
+
 ### [0.2.2](https://github.com/abraham-ukachi/ab-nextjs-animations/compare/v0.2.1...v0.2.2) (2026-10-03)
 
 * Publish to npm automatically from GitHub Actions with Trusted Publishing (OIDC + provenance, no NPM_TOKEN)

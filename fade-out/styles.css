@@ -28,7 +28,7 @@
 * @name: Fade Out - Animation 
 * @file: fade-out/styles.css
 * @type: CSS Stylesheet
-* @authors: Abraham Ukachi <abraham.ukachi@laplateforme.io>
+* @authors: Abraham Ukachi <abrahamukachi@gmail.com>
 *
 * Example usage:
 *   1+|> 
@@ -57,4 +57,13 @@
 /* Class */
 .fadeOut {
   animation: fadeOut var(--fade-out-animation-duration, var(--fade-animation-duration, 500ms)) ease var(--fade-out-animation-delay, var(--fade-animation-delay, 0ms)) forwards;
+}
+
+
+/* ♿ reduced motion (G28): no animation, jump to the end state */
+@media (prefers-reduced-motion: reduce) {
+  .fadeOut {
+    animation: none; /* 🚫 no fade */
+    opacity: 0; /* 🎯 final opacity */
+  }
 }

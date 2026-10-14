@@ -1,6 +1,6 @@
 {
   "name": "ab-nextjs-animations",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "💫 A lightweight collection of React animations created by Abraham Ukachi, and optimized for Next.js applications 😎.",
   "type": "module",
   "main": "index.ts",
@@ -10,6 +10,7 @@
     "types",
     "fade-in",
     "fade-out",
+    "fade",
     "loop",
     "pop-in",
     "slide-down",
@@ -35,6 +36,7 @@
   "scripts": {
     "lint": "eslint . --fix",
     "test": "vitest run",
+    "typecheck": "tsc --noEmit -p .",
     "check:publish": "node scripts/check-publish-deps.mjs",
     "prepublishOnly": "node scripts/check-publish-deps.mjs"
   },
@@ -78,5 +80,27 @@
     "react-dom": "^19",
     "typescript": "^5",
     "vitest": "^3"
+  },
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.ts"
+    },
+    "./package.json": "./package.json",
+    "./types": "./types/index.d.ts",
+    "./fade-in": "./fade-in/index.ts",
+    "./fade-out": "./fade-out/index.ts",
+    "./fade": "./fade/index.ts",
+    "./loop": "./loop/index.ts",
+    "./pop-in": "./pop-in/index.ts",
+    "./slide-down": "./slide-down/index.ts",
+    "./slide-from-down": "./slide-from-down/index.ts",
+    "./slide-from-left": "./slide-from-left/index.ts",
+    "./slide-from-right": "./slide-from-right/index.ts",
+    "./slide-from-up": "./slide-from-up/index.ts",
+    "./slide-left": "./slide-left/index.ts",
+    "./slide-right": "./slide-right/index.ts",
+    "./slide-up": "./slide-up/index.ts",
+    "./*": "./*"
   }
 }

@@ -28,7 +28,7 @@
 * @name: abAnimations
 * @file: index.ts
 * @type: TypeScript 
-* @authors: Abraham Ukachi <abraham.ukachi@laplateforme.io>
+* @authors: Abraham Ukachi <abrahamukachi@gmail.com>
 *
 * Example usage:
 *
@@ -76,6 +76,8 @@ import type { Animations, Animation, Keyframes } from './types';
 import PopInAnimation from './pop-in';
 import FadeInAnimation from './fade-in';
 import FadeOutAnimation from './fade-out';
+// 🌫️ G28: reduced-motion aware fade
+import FadeAnimation from './fade';
 import SlideFromDownAnimation from './slide-from-down';
 import SlideFromUpAnimation from './slide-from-up';
 import SlideLeftAnimation from './slide-left';
@@ -94,6 +96,7 @@ export const supportedAnimations: Array<{ name: string, animation: Animation }> 
   { name: 'pop-in', animation: PopInAnimation },
   { name: 'fade-in', animation: FadeInAnimation },
   { name: 'fade-out', animation: FadeOutAnimation },
+  { name: 'fade', animation: FadeAnimation }, // 🌫️ G28
   { name: 'slide-from-down', animation: SlideFromDownAnimation },
   { name: 'slide-from-up', animation: SlideFromUpAnimation },
   { name: 'slide-left', animation: SlideLeftAnimation },
@@ -124,8 +127,8 @@ export const supportedAnimations: Array<{ name: string, animation: Animation }> 
  *
  * @return { Keyframes }
  */
-const getAllKeyframes = () => supportedAnimations.reduce((obj, 
-  { name, animation }: { name: string, animation: Animation }): Keyframes => {
+const getAllKeyframes = () => supportedAnimations.reduce((obj: Record<string, Keyframes>, // 🗺️ name → keyframes (typed, fixes TS2322)
+  { name, animation }: { name: string, animation: Animation }): Record<string, Keyframes> => {
 
   return {
     ...obj,
@@ -139,7 +142,7 @@ const getAllKeyframes = () => supportedAnimations.reduce((obj,
  *
  * @return { Record<string, string> }
  */
-const getAllRefs = () => supportedAnimations.reduce((obj, 
+const getAllRefs = () => supportedAnimations.reduce((obj: Record<string, string>, // 🗺️ name → ref
   { name, animation }: { name: string, animation: Animation }): Record<string, string> => {
 
   return {
@@ -152,7 +155,7 @@ const getAllRefs = () => supportedAnimations.reduce((obj,
 
 
 // get all keyframes & refs
-const keyframes: Keyframes = getAllKeyframes();
+const keyframes: Record<string, Keyframes> = getAllKeyframes(); // 🎞️ all keyframes
 const refs: Record<string, string> = getAllRefs(); 
 
 

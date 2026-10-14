@@ -58,6 +58,11 @@ describe("ab-nextjs-animations package smoke", () => {
       "slide-down",
       "slide-up",
       "loop",
+      "slide-step",
+      "wire",
+      "spin",
+      "progress-sweep",
+      "motion",
     ];
     for (const folder of folders) {
       const css = readFileSync(join(root, folder, "styles.css"), "utf8");
@@ -68,7 +73,7 @@ describe("ab-nextjs-animations package smoke", () => {
   it("exports supportedAnimations from the package index", async () => {
     const mod = await import("../index.ts");
     expect(Array.isArray(mod.supportedAnimations)).toBe(true);
-    expect(mod.supportedAnimations.length).toBe(13);
+    expect(mod.supportedAnimations.length).toBe(19);
     expect(mod.default).toBeTruthy();
     expect(mod.default.keyframes).toBeTruthy();
     expect(mod.default.refs).toBeTruthy();

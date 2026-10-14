@@ -21,6 +21,11 @@
     "slide-left",
     "slide-right",
     "slide-up",
+    "slide-step",
+    "wire",
+    "spin",
+    "progress-sweep",
+    "motion",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
@@ -101,6 +106,16 @@
     "./slide-left": "./slide-left/index.ts",
     "./slide-right": "./slide-right/index.ts",
     "./slide-up": "./slide-up/index.ts",
+    "./slide-step": "./slide-step/index.ts",
+    "./slide-step/styles.css": "./slide-step/styles.css",
+    "./wire": "./wire/index.ts",
+    "./wire/styles.css": "./wire/styles.css",
+    "./spin": "./spin/index.ts",
+    "./spin/styles.css": "./spin/styles.css",
+    "./progress-sweep": "./progress-sweep/index.ts",
+    "./progress-sweep/styles.css": "./progress-sweep/styles.css",
+    "./motion": "./motion/index.ts",
+    "./motion/styles.css": "./motion/styles.css",
     "./*": "./*"
   }
 }

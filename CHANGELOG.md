@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.2.5 (unreleased, local)
+
+* **locale-cycle (new):** a 4-slot locale loop (EN → FR → ES → RU), moved from components' i18n playground scene. `.ab-locale-cycle-word` (fade in + 8px rise, ease-out-cubic over the first 10%, held for its slot) and `.ab-locale-cycle-chip` (instant `step-end` jumps); slot via `--ab-locale-cycle-index`, loop via `--ab-locale-cycle-duration` (2400ms), chip colours `--ab-locale-cycle-on-bg|on-fg|off-fg`; `[data-ab-still]` = the still frame; pause inside `[data-ab-paused='true']`. Reduced motion (OS or `[data-ab-reduced-motion='true']`): still frame only. `AB_LOCALE_CYCLE_WORD_CLASS`, `AB_LOCALE_CYCLE_CHIP_CLASS`, `AB_LOCALE_CYCLE_SLOTS`; `locale-cycle-word` / `locale-cycle-chip` in `supportedAnimations` (21 total)
+
 ### [0.2.4](https://github.com/abraham-ukachi/ab-nextjs-animations/compare/v0.2.3...v0.2.4) (2026-10-14)
 
 * **slide-step (new):** direction-aware slide enter / leave. `.ab-slide-step-in` / `.ab-slide-step-out` (keyframes `abSlideStepIn` / `abSlideStepOut`); forward / back from `data-ab-direction` on the element or an ancestor; RTL mirrors under `[dir='rtl']` or `--ab-slide-step-flip: -1`; tunables `--ab-slide-step-duration` / `-easing` / `-distance`; `getAbSlideStepDirection(from, to, count, loop)` (shortest way round when looping). Reduced motion (OS or `[data-ab-reduced-motion='true']`): opacity cross-fade only (`--ab-slide-step-reduced-duration`, default 120ms)

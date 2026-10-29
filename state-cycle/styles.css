@@ -1,0 +1,183 @@
+/*
+* @license MIT
+* ~~~~~~~~~~~~
+* ab-nextjs-animations
+* ~~~~~~~~~~~~
+* Copyright (c) 2026 Abraham Ukachi. The abElements Project.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the 'Software'), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* @project: ab-nextjs-animations
+* @name: State Cycle styles
+* @file: state-cycle/styles.css
+* @type: Stylesheet
+* @authors: Abraham Ukachi <abrahamukachi@gmail.com>
+*/
+
+/*
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* MOTTO: We'll always do more 😜!!!
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+/* 🔁 STATE CYCLE — the Welcome v6 "upgraded" 4-state loop: 4 states × 600ms = one 2.4s loop, in sync with
+*  .ab-wire-pulse (also 2400ms). Every class here is generic (playground scenes, demos, onboarding…).
+*
+*  Per-STATE (the element owns one slot, --ab-state-cycle-index 0…3):
+*    .ab-state-cycle-word    stacked values: fade in + rise 8px → 0 (ease-out-cubic, 0.24s), hold, hide
+*    .ab-state-cycle-chip    segmented chip: "on" for its slot, instant jumps (step-end). Fewer than 4 chips (state k → chip k mod n):
+*                            [data-ab-cycle='every-2'] (2 chips: on for slots i and i+2), [data-ab-cycle='first-last'] (the first of 3: slots 0 and 3)
+*    .ab-state-cycle-hl      highlight: bronze border + 12% bronze tint for its slot (step-end)
+*    .ab-state-cycle-dim     dimmed (opacity .35) for its slot only (step-end)
+*  Per-STEP (repeats every 600ms, no index):
+*    .ab-state-cycle-press   press-scale to --ab-motion-press-scale (0.94) for the first 15% of each step
+*    .ab-state-cycle-pop     pop: scale 0.6 → 1.06 (0–25%) → 1 (45%)
+*    .ab-state-cycle-rise    rise: translateY(14px) → 0 over the first 40% (ease-out-cubic)
+*  Per-LOOP (2.4s):
+*    .ab-state-cycle-switch  a switch: on for states 0–1, off for 2–3 (the knob = .ab-state-cycle-knob child)
+*    .ab-state-cycle-fill    a bar fill: scaleX 0 → 1, linear
+*    .ab-state-cycle-ride    a dot riding its `offset-path`: 0 → 100% over 0–75%, then holds
+*
+*  🖼️ Still frame (SSR, reduced motion, paused) = state 0: [data-ab-still] word / chip / hl show, the switch is on,
+*     the fill sits at --ab-state-cycle-fill-still (40%), the ride dot at the end, press / pop / rise at rest.
+*  ⏸️ [data-ab-paused='true'] pauses everything inside. ♿ OS reduce + [data-ab-reduced-motion='true'] stop it.
+*
+*  🎛️ Tunables:
+*    --ab-state-cycle-index         0…3 (per-state classes)
+*    --ab-state-cycle-duration      whole loop, default 2400ms
+*    --ab-state-cycle-on-bg / -on-fg / -off-fg      chip colours (bronze / #fff8f5 / currentColor)
+*    --ab-state-cycle-hl-border / -hl-bg            highlight (#a67c52 / rgb(166 124 82 / 12%))
+*    --ab-state-cycle-idle-border / -idle-bg        idle highlight (transparent; set your own border colour)
+*    --ab-state-cycle-dim-opacity   default .35
+*    --ab-state-cycle-switch-on / -switch-off       switch track (bronze / rgb(166 124 82 / 25%))
+*    --ab-state-cycle-knob-travel   knob travel when on (default 1rem)
+*    --ab-state-cycle-rise          rise distance (default 14px)
+*    --ab-state-cycle-fill-still    still fill (default 0.4)
+*/
+
+/* 🖼️ still frame + resting state (no animation) */
+.ab-state-cycle-word { opacity: 0; } /* 🙈 */
+.ab-state-cycle-word[data-ab-still] { opacity: 1; } /* 🖼️ */
+.ab-state-cycle-chip[data-ab-still] {
+  background: var(--ab-state-cycle-on-bg, #a67c52); /* 🥉 */
+  color: var(--ab-state-cycle-on-fg, #fff8f5); /* ✍️ */
+}
+.ab-state-cycle-hl[data-ab-still] {
+  border-color: var(--ab-state-cycle-hl-border, #a67c52); /* 🥉 */
+  background: var(--ab-state-cycle-hl-bg, rgb(166 124 82 / 12%)); /* 🌅 */
+}
+.ab-state-cycle-switch { background: var(--ab-state-cycle-switch-on, #a67c52); } /* 🟢 on */
+.ab-state-cycle-switch > .ab-state-cycle-knob { transform: translateX(var(--ab-state-cycle-knob-travel, 1rem)); } /* ➡️ on */
+.ab-state-cycle-fill { transform: scaleX(var(--ab-state-cycle-fill-still, 0.4)); transform-origin: 0 50%; } /* 📏 40% */
+[dir='rtl'] .ab-state-cycle-fill { transform-origin: 100% 50%; } /* 🌍 */
+.ab-state-cycle-ride { offset-distance: 100%; offset-rotate: 0deg; } /* 🏁 at rest on the curve end */
+
+/* ▶️ the cycle (only when motion is allowed) */
+@media (prefers-reduced-motion: no-preference) {
+  .ab-state-cycle-word, .ab-state-cycle-chip, .ab-state-cycle-hl, .ab-state-cycle-dim {
+    animation-duration: var(--ab-state-cycle-duration, 2400ms); /* ⏱️ */
+    animation-iteration-count: infinite; /* 🔁 */
+    animation-delay: calc(var(--ab-state-cycle-index, 0) * var(--ab-state-cycle-duration, 2400ms) / 4 - var(--ab-state-cycle-duration, 2400ms)); /* ⏱️ slot i starts at i/4, no blank first loop */
+  }
+  .ab-state-cycle-word { animation-name: abStateCycleWord; animation-timing-function: linear; } /* 👋 */
+  .ab-state-cycle-chip { animation-name: abStateCycleChip; animation-timing-function: step-end; } /* ⚡ */
+  .ab-state-cycle-chip[data-ab-cycle='every-2'] { animation-name: abStateCycleChipEvery2; } /* 2️⃣ k mod 2 */
+  .ab-state-cycle-chip[data-ab-cycle='first-last'] { animation-name: abStateCycleChipFirstLast; animation-delay: 0s; } /* 3️⃣ k mod 3: chip 0 owns slots 0 + 3 */
+  .ab-state-cycle-hl { animation-name: abStateCycleHl; animation-timing-function: step-end; } /* 🔦 */
+  .ab-state-cycle-dim { animation-name: abStateCycleDim; animation-timing-function: step-end; } /* 🌫️ */
+  .ab-state-cycle-press { animation: abStateCyclePress calc(var(--ab-state-cycle-duration, 2400ms) / 4) step-end infinite; } /* 👆 */
+  .ab-state-cycle-pop { animation: abStateCyclePop calc(var(--ab-state-cycle-duration, 2400ms) / 4) linear infinite; } /* 🎈 */
+  .ab-state-cycle-rise { animation: abStateCycleRise calc(var(--ab-state-cycle-duration, 2400ms) / 4) linear infinite; } /* ⬆️ */
+  .ab-state-cycle-switch { animation: abStateCycleSwitch var(--ab-state-cycle-duration, 2400ms) step-end infinite; } /* 🔀 */
+  .ab-state-cycle-switch > .ab-state-cycle-knob { animation: abStateCycleKnob var(--ab-state-cycle-duration, 2400ms) step-end infinite; } /* 🔘 */
+  .ab-state-cycle-fill { animation: abStateCycleFill var(--ab-state-cycle-duration, 2400ms) linear infinite; } /* 📏 */
+  .ab-state-cycle-ride { animation: abStateCycleRide var(--ab-state-cycle-duration, 2400ms) linear infinite; } /* 🎢 */
+}
+
+/* ⏸️ paused (inactive slide, off-screen…) */
+[data-ab-paused='true'] :is(.ab-state-cycle-word, .ab-state-cycle-chip, .ab-state-cycle-hl, .ab-state-cycle-dim, .ab-state-cycle-press, .ab-state-cycle-pop, .ab-state-cycle-rise, .ab-state-cycle-switch, .ab-state-cycle-knob, .ab-state-cycle-fill, .ab-state-cycle-ride) {
+  animation-play-state: paused; /* ⏸️ */
+}
+
+/* 🎞️ keyframes (per-state: one slot = 25%) */
+@keyframes abStateCycleWord {
+  0% { opacity: 0; transform: translateY(8px); animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); } /* 🌅 ease-out-cubic */
+  10% { opacity: 1; transform: translateY(0); } /* ✅ 0.24s of 2.4s */
+  24.99% { opacity: 1; transform: translateY(0); } /* 👀 held */
+  25%, 100% { opacity: 0; transform: translateY(0); } /* 🙈 */
+}
+@keyframes abStateCycleChip {
+  0% { background: var(--ab-state-cycle-on-bg, #a67c52); color: var(--ab-state-cycle-on-fg, #fff8f5); } /* 🥉 on */
+  25%, 100% { background: transparent; color: var(--ab-state-cycle-off-fg, currentColor); } /* ⚪ off */
+}
+@keyframes abStateCycleChipEvery2 {
+  0%, 50% { background: var(--ab-state-cycle-on-bg, #a67c52); color: var(--ab-state-cycle-on-fg, #fff8f5); } /* 🥉 slots i, i+2 */
+  25%, 75%, 100% { background: transparent; color: var(--ab-state-cycle-off-fg, currentColor); } /* ⚪ */
+}
+@keyframes abStateCycleChipFirstLast {
+  0%, 75%, 100% { background: var(--ab-state-cycle-on-bg, #a67c52); color: var(--ab-state-cycle-on-fg, #fff8f5); } /* 🥉 slots 0 + 3 */
+  25% { background: transparent; color: var(--ab-state-cycle-off-fg, currentColor); } /* ⚪ slots 1–2 */
+}
+@keyframes abStateCycleHl {
+  0% { border-color: var(--ab-state-cycle-hl-border, #a67c52); background: var(--ab-state-cycle-hl-bg, rgb(166 124 82 / 12%)); } /* 🔦 */
+  25%, 100% { border-color: var(--ab-state-cycle-idle-border, transparent); background: var(--ab-state-cycle-idle-bg, transparent); } /* ⚪ */
+}
+@keyframes abStateCycleDim {
+  0% { opacity: var(--ab-state-cycle-dim-opacity, 0.35); } /* 🌫️ */
+  25%, 100% { opacity: 1; } /* 👀 */
+}
+/* 🎞️ per-step (600ms) */
+@keyframes abStateCyclePress {
+  0% { transform: scale(var(--ab-motion-press-scale, 0.94)); } /* 👆 */
+  15%, 100% { transform: scale(1); } /* 🖐️ */
+}
+@keyframes abStateCyclePop {
+  0% { transform: scale(0.6); } /* 🫧 */
+  25% { transform: scale(1.06); } /* 🎈 */
+  45%, 100% { transform: scale(1); } /* ✅ */
+}
+@keyframes abStateCycleRise {
+  0% { transform: translateY(var(--ab-state-cycle-rise, 14px)); animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); } /* ⬇️ */
+  40%, 100% { transform: translateY(0); } /* ✅ */
+}
+/* 🎞️ per-loop (2.4s) */
+@keyframes abStateCycleSwitch {
+  0% { background: var(--ab-state-cycle-switch-on, #a67c52); } /* 🟢 states 0–1 */
+  50%, 100% { background: var(--ab-state-cycle-switch-off, rgb(166 124 82 / 25%)); } /* ⚪ states 2–3 */
+}
+@keyframes abStateCycleKnob {
+  0% { transform: translateX(var(--ab-state-cycle-knob-travel, 1rem)); } /* ➡️ */
+  50%, 100% { transform: translateX(0); } /* ⬅️ */
+}
+@keyframes abStateCycleFill {
+  from { transform: scaleX(0); } /* 0️⃣ */
+  to { transform: scaleX(1); } /* 💯 */
+}
+@keyframes abStateCycleRide {
+  0% { offset-distance: 0%; } /* 🏁 */
+  75%, 100% { offset-distance: 100%; } /* 🏆 then holds */
+}
+
+/* ♿ reduced motion: no cycle, the still frame only */
+@media (prefers-reduced-motion: reduce) {
+  .ab-state-cycle-word, .ab-state-cycle-chip, .ab-state-cycle-hl, .ab-state-cycle-dim, .ab-state-cycle-press, .ab-state-cycle-pop,
+  .ab-state-cycle-rise, .ab-state-cycle-switch, .ab-state-cycle-knob, .ab-state-cycle-fill, .ab-state-cycle-ride { animation: none; } /* 🖼️ */
+}
+[data-ab-reduced-motion='true'] :is(.ab-state-cycle-word, .ab-state-cycle-chip, .ab-state-cycle-hl, .ab-state-cycle-dim, .ab-state-cycle-press, .ab-state-cycle-pop, .ab-state-cycle-rise, .ab-state-cycle-switch, .ab-state-cycle-knob, .ab-state-cycle-fill, .ab-state-cycle-ride) { animation: none; } /* ♿ forced */

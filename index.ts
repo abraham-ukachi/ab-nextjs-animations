@@ -92,6 +92,10 @@ import { SlideStepInAnimation, SlideStepOutAnimation } from './slide-step';
 import { WireDrawAnimation, WirePulseAnimation } from './wire';
 import SpinAnimation from './spin';
 import ProgressSweepAnimation from './progress-sweep';
+// 🌍 0.2.5 (Welcome illustration 8): the 4-slot locale cycle (moved out of components' i18n scene)
+import { LocaleCycleWordAnimation, LocaleCycleChipAnimation } from './locale-cycle';
+// 🔁 0.2.5: the Welcome v6 upgraded 4-state cycle
+import { StateCycleHighlightAnimation, StateCyclePressAnimation, StateCyclePopAnimation, StateCycleRideAnimation } from './state-cycle';
 
 
 
@@ -117,6 +121,12 @@ export const supportedAnimations: Array<{ name: string, animation: Animation }> 
   { name: 'wire-pulse', animation: WirePulseAnimation }, // ✨ 0.2.4
   { name: 'spin', animation: SpinAnimation }, // 🌀 0.2.4
   { name: 'progress-sweep', animation: ProgressSweepAnimation }, // 🔁 0.2.4
+  { name: 'locale-cycle-word', animation: LocaleCycleWordAnimation }, // 👋 0.2.5
+  { name: 'locale-cycle-chip', animation: LocaleCycleChipAnimation }, // 🎚️ 0.2.5
+  { name: 'state-cycle-highlight', animation: StateCycleHighlightAnimation }, // 🔦 0.2.5
+  { name: 'state-cycle-press', animation: StateCyclePressAnimation }, // 👆 0.2.5
+  { name: 'state-cycle-pop', animation: StateCyclePopAnimation }, // 🎈 0.2.5
+  { name: 'state-cycle-ride', animation: StateCycleRideAnimation }, // 🎢 0.2.5
 ];
 
 
@@ -185,4 +195,6 @@ export { getAbSlideStepDirection, AB_SLIDE_STEP_IN_CLASS, AB_SLIDE_STEP_OUT_CLAS
 export { AB_WIRE_DRAW_CLASS, AB_WIRE_PULSE_CLASS } from './wire';
 export { AB_SPIN_CLASS } from './spin';
 export { AB_PROGRESS_SWEEP_CLASS } from './progress-sweep';
+export { AB_LOCALE_CYCLE_WORD_CLASS, AB_LOCALE_CYCLE_CHIP_CLASS, AB_LOCALE_CYCLE_SLOTS } from './locale-cycle'; // 🌍 0.2.5
+export { AB_STATE_CYCLE_CLASSES, AB_STATE_CYCLE_STATES, AB_STATE_CYCLE_DURATION, type AbStateCycleClass } from './state-cycle'; // 🔁 0.2.5
 export { AB_MOTION, AB_MOTION_TOKENS, AB_REDUCED_MOTION_QUERY, AB_REDUCED_MOTION_ATTRIBUTE } from './motion';

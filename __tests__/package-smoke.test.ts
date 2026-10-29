@@ -73,7 +73,7 @@ describe("ab-nextjs-animations package smoke", () => {
   it("exports supportedAnimations from the package index", async () => {
     const mod = await import("../index.ts");
     expect(Array.isArray(mod.supportedAnimations)).toBe(true);
-    expect(mod.supportedAnimations.length).toBe(19);
+    expect(mod.supportedAnimations.length).toBe(25); // 🌍 0.2.5: + locale-cycle-word/-chip, 🔁 + state-cycle-highlight/-press/-pop/-ride
     expect(mod.default).toBeTruthy();
     expect(mod.default.keyframes).toBeTruthy();
     expect(mod.default.refs).toBeTruthy();

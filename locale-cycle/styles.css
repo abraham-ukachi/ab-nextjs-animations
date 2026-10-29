@@ -1,0 +1,97 @@
+/*
+* @license MIT
+* ~~~~~~~~~~~~
+* ab-nextjs-animations
+* ~~~~~~~~~~~~
+* Copyright (c) 2026 Abraham Ukachi. The abElements Project.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the 'Software'), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* @project: ab-nextjs-animations
+* @name: Locale Cycle Styles
+* @file: locale-cycle/styles.css
+* @type: Stylesheet
+* @authors: Abraham Ukachi <abrahamukachi@gmail.com>
+*/
+
+/*
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* MOTTO: We'll always do more 😜!!!
+* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
+
+/* 🌍 LOCALE CYCLE — a 4-slot loop (e.g. EN → FR → ES → RU), one slot = 25% of the loop.
+*    .ab-locale-cycle-word   stacked words: fades in + rises 8px → 0 (ease-out-cubic, first 10%), holds, hides
+*    .ab-locale-cycle-chip   switcher chips: "on" for its slot, jumps instantly (step-end) at each boundary
+*    [data-ab-still]         the still frame: the word / chip shown with no motion (SSR + reduced motion)
+*  ⏸️ pause everything inside [data-ab-paused='true'] (e.g. an inactive carousel slide)
+*
+*  🎛️ Tunables:
+*    --ab-locale-cycle-index      0…3 (which slot this word / chip owns)
+*    --ab-locale-cycle-duration   whole loop, default 2400ms (4 × 600ms)
+*    --ab-locale-cycle-on-bg      active chip background (default #a67c52, bronze)
+*    --ab-locale-cycle-on-fg      active chip text (default #fff8f5)
+*    --ab-locale-cycle-off-fg     idle chip text (default currentColor)
+*/
+
+/* 🙈 words: only the active (or still) one shows */
+.ab-locale-cycle-word { opacity: 0; } /* 🙈 */
+.ab-locale-cycle-word[data-ab-still] { opacity: 1; } /* 🖼️ still frame */
+.ab-locale-cycle-chip[data-ab-still] {
+  background: var(--ab-locale-cycle-on-bg, #a67c52); /* 🥉 */
+  color: var(--ab-locale-cycle-on-fg, #fff8f5); /* ✍️ */
+}
+
+/* ▶️ the cycle (only when motion is allowed) */
+@media (prefers-reduced-motion: no-preference) {
+  .ab-locale-cycle-word {
+    animation: abLocaleCycleWord var(--ab-locale-cycle-duration, 2400ms) linear infinite; /* 🔁 */
+    animation-delay: calc(var(--ab-locale-cycle-index, 0) * var(--ab-locale-cycle-duration, 2400ms) / 4 - var(--ab-locale-cycle-duration, 2400ms)); /* ⏱️ slot i starts at i/4, no blank first loop */
+  }
+  .ab-locale-cycle-chip {
+    animation: abLocaleCycleChip var(--ab-locale-cycle-duration, 2400ms) step-end infinite; /* ⚡ instant jumps */
+    animation-delay: calc(var(--ab-locale-cycle-index, 0) * var(--ab-locale-cycle-duration, 2400ms) / 4 - var(--ab-locale-cycle-duration, 2400ms)); /* ⏱️ */
+  }
+}
+
+/* ⏸️ paused (inactive slide, off-screen…) */
+[data-ab-paused='true'] .ab-locale-cycle-word,
+[data-ab-paused='true'] .ab-locale-cycle-chip {
+  animation-play-state: paused; /* ⏸️ */
+}
+
+/* 🎞️ keyframes (one slot = 25%) */
+@keyframes abLocaleCycleWord {
+  0% { opacity: 0; transform: translateY(8px); animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); } /* 🌅 ease-out-cubic */
+  10% { opacity: 1; transform: translateY(0); } /* ✅ 0.24s of 2.4s */
+  24.99% { opacity: 1; transform: translateY(0); } /* 👀 held */
+  25%, 100% { opacity: 0; transform: translateY(0); } /* 🙈 next locale */
+}
+@keyframes abLocaleCycleChip {
+  0% { background: var(--ab-locale-cycle-on-bg, #a67c52); color: var(--ab-locale-cycle-on-fg, #fff8f5); } /* 🥉 on */
+  25%, 100% { background: transparent; color: var(--ab-locale-cycle-off-fg, currentColor); } /* ⚪ off */
+}
+
+/* ♿ reduced motion: no cycle, the still frame only */
+@media (prefers-reduced-motion: reduce) {
+  .ab-locale-cycle-word, .ab-locale-cycle-chip { animation: none; } /* 🖼️ still */
+}
+[data-ab-reduced-motion='true'] .ab-locale-cycle-word,
+[data-ab-reduced-motion='true'] .ab-locale-cycle-chip { animation: none; } /* ♿ forced */

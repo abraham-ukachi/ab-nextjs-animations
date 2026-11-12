@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.6](https://github.com/abraham-ukachi/ab-nextjs-animations/compare/v0.2.5...v0.2.6) (2026-11-12)
+
+* Normalize the changelog format and backfill missing entries.
+
 ## [0.2.5](https://github.com/abraham-ukachi/ab-nextjs-animations/compare/787aaff314b53b0c75d1e3e9d97970d51bfa462b...v0.2.5) (2026-10-29)
 
 * **locale-cycle (new):** a 4-slot locale loop (EN → FR → ES → RU), moved from components' i18n playground scene. `.ab-locale-cycle-word` (fade in + 8px rise, ease-out-cubic over the first 10%, held for its slot) and `.ab-locale-cycle-chip` (instant `step-end` jumps); slot via `--ab-locale-cycle-index`, loop via `--ab-locale-cycle-duration` (2400ms), chip colours `--ab-locale-cycle-on-bg|on-fg|off-fg`; `[data-ab-still]` = the still frame; pause inside `[data-ab-paused='true']`. Reduced motion (OS or `[data-ab-reduced-motion='true']`): still frame only. `AB_LOCALE_CYCLE_WORD_CLASS`, `AB_LOCALE_CYCLE_CHIP_CLASS`, `AB_LOCALE_CYCLE_SLOTS`; `locale-cycle-word` / `locale-cycle-chip` in `supportedAnimations` (21 total)
